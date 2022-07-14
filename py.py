@@ -1,9 +1,5 @@
-def fruitImgUrl(fruit):
-    if fruit == 'banana' or fruit == 'BANANA':
-        return 'url1'
-    elif fruit == 'pineapple' or fruit == 'PINEAPPLE':
-        return 'url2'
-    elif fruit == 'pear' or fruit == 'PEAR':
-        return 'url3'
-    else:
-        return 'no image'
+def billSummation(arr1, arr2):
+    re = 0
+    for i in range(len(arr1)):
+        re += arr1[i]*arr2[i]
+    return re

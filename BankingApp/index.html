@@ -1,122 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- メタタグ -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<head>
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-
-    <!-- fontawesome -->
-    <link
-      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-      rel="stylesheet"
-    />
-
-    <title>Project 2</title>
-    <style>
-      body {
-        font-family: Futura !important;
-        letter-spacing: 0.02em !important;
-      }
-
-      p {
-        margin: 0 !important;
-      }
-
-      /* font-size */
-      .rem1p3 {
-        font-size: 1.3rem;
-      }
-
-      .rem1p5 {
-        font-size: 1.5rem;
-      }
-
-      /* background */
-      .bg-green {
-        background: #4ba3a1;
-      }
-
-      .bg-blue {
-        background: #1a4567;
-      }
-
-      /* effect */
-      .hover {
-        cursor: pointer;
-      }
-
-      .hover:hover {
-        opacity: 0.9;
-      }
-
-      /* specific layout */
-      .money-box {
-        margin: 1em 0;
-        border: double 5px white;
-        background: #1a4567;
-        color: white;
-      }
-
-      .calculation-box {
-        margin: 0.5em 0;
-        padding: 0.5em 0;
-        border: solid 2px white;
-        background: #1a4567;
-        color: white;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- 2 main page -->
-    <div
-      class="vh-100 bg-dark d-flex flex-column justify-content-center align-items-center"
-    >
-      <div class="d-flex align-items-center col-md-7 col-10">
-        <div class="bg-green col-12 text-center pt-md-4 px-4 pt-1 text-white">
-          <div class="pb-2 pb-md-4 text-right">
-            <p class="py-1">Your Name: Kaiden Herman</p>
-            <p class="py-1">Your Back ID: 12345678</p>
-            <p class="py-1">Your First Deposit: $205.00</p>
+  <!-- fontawesome -->
+  <link
+    href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<!-- 1ページ目 -->
+<div
+  class="vh-100 bg-dark d-flex flex-column justify-content-center align-items-center"
+>
+  <div class="d-flex align-items-center col-md-7 col-10">
+    <div id="initial-form" class="bg-white col-12 text-center p-4">
+      <h2 class="pb-3">Please type your information below</h2>
+      <form
+        id="bank-form"
+        class="form"
+        onsubmit="initializeUserAccount(); event.preventDefault()"
+      >
+        <!-- 毎回情報を入力する手間を省くためにvalue属性を設定します。 -->
+        <div class="form-group">
+          <input
+            type="email"
+            name="userEmail"
+            class="form-control"
+            placeholder="Email"
+            value="fdsfdsf@gmail.com"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="userFirstName"
+            class="form-control"
+            placeholder="First name"
+            value="fdsfdsf"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="userLastName"
+            class="form-control"
+            placeholder="Last name"
+            value="fdsfdsf"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            class="form-control"
+            name="userFirstDeposit"
+            aria-describedby="emailHelp"
+            placeholder="Enter your first deposit"
+            value="20"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="userAccountType"
+              id="userAccountType1"
+              value="savings"
+              checked
+              required
+            />
+            <label class="form-check-label" for="userAccountType1">
+              Savings
+            </label>
           </div>
-          <div class="d-flex bg-danger py-1 py-md-2">
-            <p class="col-8 text-left rem1p5">Available Balance</p>
-            <p class="col-4 text-right rem1p5">$12,345</p>
-          </div>
-          <div
-            class="d-flex justify-content-center flex-wrap text-center py-3 mx-0"
-          >
-            <div class="col-lg-4 col-12 py-1 py-md-3 px-0 px-md-1">
-              <div id="withdrawBtn" class="bg-blue hover p-3">
-                <h5>WITHDRAWAL</h5>
-                <i class="fas fa-wallet fa-3x"></i>
-              </div>
-            </div>
-            <div class="col-lg-4 col-12 py-1 py-md-3 px-0 px-md-1">
-              <div id="depositBtn" class="bg-blue hover p-3">
-                <h5>DEPOSIT</h5>
-                <i class="fas fa-coins fa-3x"></i>
-              </div>
-            </div>
-            <div class="col-lg-4 col-12 py-1 py-md-3 px-0 px-md-1">
-              <div id="comeBackLaterBtn" class="bg-blue hover p-3">
-                <h5>COME BACK LATER</h5>
-                <i class="fas fa-home fa-3x"></i>
-              </div>
-            </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="userAccountType"
+              id="userAccountType2"
+              value="checkings"
+              required
+            />
+            <label class="form-check-label" for="userAccountType2">
+              Checkings
+            </label>
           </div>
         </div>
-      </div>
+        <button type="submit" class="btn btn-primary col-12">Submit</button>
+      </form>
     </div>
-  </body>
-</html>
+    <!-- 2ページ目の枠 -->
+    <div id="bankPage" class="bg-green col-12 text-center text-white"></div>
+    <!-- menu先のページ -->
+    <div id="sidePage" class="bg-white col-12 text-center"></div>
+  </div>
+</div>
+<script src="main.js"></script>
