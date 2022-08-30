@@ -86,21 +86,27 @@ class EmotionObject {
   }
   getOnomatopoeiaWords() {
     let returnArr = [];
-    for (let i = 0; i < this.onomatopoeia.length; i++) {
-      returnArr.push(
-        new Word(
-          this.onomatopoeia[i],
-          dictionary[this.onomatopoeia[i]],
-          pictureDictionary[this.onomatopoeia[i]]
-        )
-      );
+    for (let index in this.onomatopoeia) {
+      let word = this.onomatopoeia[index];
+      returnArr.push(new Word(word, dictionary[word], pictureDictionary[word]));
     }
     return returnArr;
   }
 
-  getHtmlContainerString() {
-    const categoryHTML = `
-            <div class="expandLink col-12 col-md-6 col-lg-3 p-4 m-4 text-center" style="background: ${
+  getCategoryHtml() {
+    let categoryHtml = document.createElement("div");
+    categoryHtml.classList.add(
+      "d-flex",
+      "col-4",
+      "col-md-6",
+      "col-lg-3",
+      "p-4",
+      "m-4",
+      "text-center",
+      "flex-wrap"
+    );
+    const html = `
+            <div class="expandLink col-12 text-center justify-content-center" style="background: ${
               this.color
             };">
                 <a href="#${this.emotion}"></a>
@@ -109,41 +115,47 @@ class EmotionObject {
                     <p class="text-white">${this.description}</p>
             </div>
         `;
+    categoryHtml.innerHTML = html;
+    return categoryHtml;
+  }
 
-    let sectionHTML = `
-            <div id="${this.emotion}" style="background: ${this.color}">
-                <div class="container py-3">
+  getOnomatopoeiaHtml() {
+    let onomatopeContainer = document.createElement("div");
+    onomatopeContainer.id = this.emotion;
+    onomatopeContainer.style.background = this.color;
+    let container = document.createElement("div");
+    container.classList.add("container", "py-3");
+    container.innerHTML = `
                     <div class="p-3 text-white">
                         <h2>${this.emotion}</h2>
-                        <p>to feel mild astonishment or shock.</p>
-                    </div>
-                    <div class="d-flex justify-content-between flex-wrap">
-        `;
-    for (let i = 0; i < this.getOnomatopoeiaWords().length; i++) {
-      sectionHTML += `
+                        <p>${this.description}</p>
+            `;
+    onomatopeContainer.append(container);
+    let cardsContainer = document.createElement("div");
+    cardsContainer.classList.add(
+      "d-flex",
+      "justify-content-between",
+      "flex-wrap"
+    );
+
+    for (let index in this.getOnomatopoeiaWords()) {
+      let onomatopoeiaWord = this.getOnomatopoeiaWords()[index];
+      let string = `
                 <div class="d-flex col-md-5 col-12 bg-white px-0 my-2">
                     <div class="col-8">
-                        <h4 class="pt-3">${
-                          this.getOnomatopoeiaWords()[i].word
-                        }</h4>
-                        <p class="pt-2">${
-                          this.getOnomatopoeiaWords()[i].definition
-                        }</p>
+                        <h4 class="pt-3">${onomatopoeiaWord.word}</h4>
+                        <p class="pt-2">${onomatopoeiaWord.definition}</p>
                     </div>
                     <div class="col-4 px-0 d-flex justify-content-center align-items-center">
-                        <img class="col-12 imgFit p-1" src="${
-                          this.getOnomatopoeiaWords()[i].pictureUrl
-                        }" alt="">
+                        <img class="col-12 imgFit p-1" src="${onomatopoeiaWord.pictureUrl}" alt="">
                     </div>
                 </div>
-            `;
+                `;
+
+      cardsContainer.innerHTML += string;
+      container.append(cardsContainer);
     }
-    sectionHTML += `
-                    </div>
-                </div>
-            </div>
-        `;
-    return [categoryHTML, sectionHTML];
+    return onomatopeContainer;
   }
 }
 
@@ -197,16 +209,20 @@ class Word {
     this.pictureUrl = pictureUrl;
   }
 }
-
-let content = '<div class="container d-flex justify-content-center flex-wrap">';
-
-for (let i = 0; i < emotions.length; i++) {
-  content += emotions[i].getHtmlContainerString()[0];
+let target = document.getElementById("target");
+let categoryContainer = document.createElement("div");
+categoryContainer.classList.add(
+  "container",
+  "d-flex",
+  "justify-content-center",
+  "flex-wrap"
+);
+for (let num in emotions) {
+  categoryContainer.append(emotions[num].getCategoryHtml());
 }
-content += "</div>";
-content += "<div>";
-for (let j = 0; j < emotions.length; j++) {
-  content += emotions[j].getHtmlContainerString()[1];
+let emotionsContainer = document.createElement("div");
+for (let num in emotions) {
+  emotionsContainer.append(emotions[num].getOnomatopoeiaHtml());
 }
-content += "</div>";
-document.getElementById("target").innerHTML = content;
+target.append(categoryContainer);
+target.append(emotionsContainer);

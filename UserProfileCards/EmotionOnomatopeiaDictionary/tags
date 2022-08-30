@@ -12,65 +12,88 @@
 .expandLink	style.css	/^.expandLink {$/;"	c
 .expandLink a	style.css	/^.expandLink a {$/;"	s
 .imgFit	style.css	/^.imgFit {$/;"	c
-EmotionObject	class.js	/^class EmotionObject {$/;"	c
-Word	class.js	/^class Word {$/;"	c
-ahem	const.js	/^  ahem: "https:\/\/cdn.pixabay.com\/photo\/2014\/03\/13\/10\/12\/man-286476_1280.jpg",$/;"	p	variable:pictureDictionary
-ahem	const.js	/^  ahem: "the utterance of a sound similar to clearing the throat",$/;"	p	variable:dictionary
-appendEmotion	main.js	/^function appendEmotion(emotion) {$/;"	f
-bark	const.js	/^  bark: "https:\/\/cdn.pixabay.com\/photo\/2013\/07\/25\/11\/59\/german-shepherd-166972_1280.jpg/;"	p	variable:pictureDictionary
-bark	const.js	/^  bark: "the sound made by a dog",$/;"	p	variable:dictionary
-bawl	const.js	/^  bawl: "cry loudly",$/;"	p	variable:dictionary
-bawl	const.js	/^  bawl: "https:\/\/cdn.pixabay.com\/photo\/2015\/06\/26\/10\/17\/smiley-822365_960_720.jpg",$/;"	p	variable:pictureDictionary
-bling	const.js	/^  bling: "flashy, ostentatious jewelry",$/;"	p	variable:dictionary
-bling	const.js	/^  bling:$/;"	p	variable:pictureDictionary
-boom	const.js	/^  boom: "a deep prolonged loud noise",$/;"	p	variable:dictionary
-boom	const.js	/^  boom: "https:\/\/cdn.pixabay.com\/photo\/2016\/04\/12\/21\/17\/explosion-1325471_1280.jpg",$/;"	p	variable:pictureDictionary
-buzz	const.js	/^  buzz: "https:\/\/cdn.pixabay.com\/photo\/2020\/02\/13\/10\/29\/bees-4845211_1280.jpg",$/;"	p	variable:pictureDictionary
-buzz	const.js	/^  buzz: "the sound of rapid vibration",$/;"	p	variable:dictionary
-caw	const.js	/^  caw: "https:\/\/cdn.pixabay.com\/photo\/2017\/02\/16\/11\/13\/bird-2071185_1280.jpg",$/;"	p	variable:pictureDictionary
-caw	const.js	/^  caw: "utter a cry, characteristic of crows, rooks, or ravens",$/;"	p	variable:dictionary
-chant	const.js	/^  chant: "a repetitive song in which syllables are assigned to a tone",$/;"	p	variable:dictionary
-chant	const.js	/^  chant:$/;"	p	variable:pictureDictionary
-chatter	const.js	/^  chatter: "https:\/\/cdn.pixabay.com\/photo\/2014\/07\/25\/08\/55\/bar-401546_1280.jpg",$/;"	p	variable:pictureDictionary
-chatter	const.js	/^  chatter: "talk socially without exchanging too much information",$/;"	p	variable:dictionary
-clatter	const.js	/^  clatter:$/;"	p	variable:dictionary
-clatter	const.js	/^  clatter:$/;"	p	variable:pictureDictionary
-clunk	const.js	/^  clunk: "a heavy dull sound (as made by impact of heavy objects)",$/;"	p	variable:dictionary
-clunk	const.js	/^  clunk:$/;"	p	variable:pictureDictionary
-constructor	class.js	/^  constructor(emotion, description, color, onomatopoeia) {$/;"	m	class:EmotionObject
-constructor	class.js	/^  constructor(word, defintion, pictureUrl) {$/;"	m	class:Word
-crawl	const.js	/^  crawl: "https:\/\/cdn.pixabay.com\/photo\/2017\/11\/23\/07\/47\/baby-2972221__340.jpg",$/;"	p	variable:pictureDictionary
-crawl	const.js	/^  crawl:$/;"	p	variable:dictionary
-dictionary	const.js	/^const dictionary = {$/;"	v
-emotions	const.js	/^const emotions = [$/;"	v
-flick	const.js	/^  flick: "throw or toss with a quick motion",$/;"	p	variable:dictionary
-flick	const.js	/^  flick:$/;"	p	variable:pictureDictionary
-gargle	const.js	/^  gargle:$/;"	p	variable:dictionary
-gargle	const.js	/^  gargle:$/;"	p	variable:pictureDictionary
-getHtmlContainerString	class.js	/^  getHtmlContainerString() {}$/;"	m	class:EmotionObject
-getOnomatopoeiaWords	class.js	/^  getOnomatopoeiaWords() {}$/;"	m	class:EmotionObject
-giggle	const.js	/^  giggle: "a light, silly laugh.",$/;"	p	variable:dictionary
-giggle	const.js	/^  giggle:$/;"	p	variable:pictureDictionary
-grunt	const.js	/^  grunt: "https:\/\/cdn.pixabay.com\/photo\/2010\/11\/29\/nepal-419__480.jpg",$/;"	p	variable:pictureDictionary
-grunt	const.js	/^  grunt: "issue a low, animal-like noise",$/;"	p	variable:dictionary
-hiss	const.js	/^  hiss: "https:\/\/cdn.pixabay.com\/photo\/2016\/10\/13\/23\/30\/cat-1739091_1280.jpg",$/;"	p	variable:pictureDictionary
-hiss	const.js	/^  hiss: `make a sharp, elongated "s" sound`,$/;"	p	variable:dictionary
-honk	const.js	/^  honk: "https:\/\/cdn.pixabay.com\/photo\/2017\/02\/28\/14\/37\/geese-2105918_1280.jpg",$/;"	p	variable:pictureDictionary
-honk	const.js	/^  honk: "the cry of a goose or any loud sound resembling it",$/;"	p	variable:dictionary
-oink	const.js	/^  oink: "https:\/\/cdn.pixabay.com\/photo\/2019\/03\/02\/15\/32\/pig-4030013_1280.jpg",$/;"	p	variable:pictureDictionary
-oink	const.js	/^  oink: "the short low gruff noise of the kind made by hogs",$/;"	p	variable:dictionary
-pictureDictionary	const.js	/^const pictureDictionary = {$/;"	v
-roar	const.js	/^  roar: "https:\/\/cdn.pixabay.com\/photo\/2018\/04\/13\/21\/24\/lion-3317670_1280.jpg",$/;"	p	variable:pictureDictionary
-roar	const.js	/^  roar: "make a loud noise, as of an animal",$/;"	p	variable:dictionary
-smack	const.js	/^  smack: "a blow from a flat object (as an open hand)",$/;"	p	variable:dictionary
-smack	const.js	/^  smack:$/;"	p	variable:pictureDictionary
+EmotionObject	main.js	/^class EmotionObject {$/;"	c
+Word	main.js	/^class Word {$/;"	M	class:EmotionObject
+Word	main.js	/^class Word {$/;"	c
+Word	main.js	/^class Word {$/;"	c	method:EmotionObject.getHtmlContainerString
+ahem	main.js	/^  ahem: "https:\/\/cdn.pixabay.com\/photo\/2014\/03\/13\/10\/12\/man-286476_1280.jpg",$/;"	p	variable:pictureDictionary
+ahem	main.js	/^  ahem: "the utterance of a sound similar to clearing the throat",$/;"	p	variable:dictionary
+angry	main.js	/^  angry: "😠",$/;"	p	variable:emoji
+bad	main.js	/^  bad: "😰",$/;"	p	variable:emoji
+bark	main.js	/^  bark: "https:\/\/cdn.pixabay.com\/photo\/2013\/07\/25\/11\/59\/german-shepherd-166972_1280.jpg/;"	p	variable:pictureDictionary
+bark	main.js	/^  bark: "the sound made by a dog",$/;"	p	variable:dictionary
+bawl	main.js	/^  bawl: "cry loudly",$/;"	p	variable:dictionary
+bawl	main.js	/^  bawl: "https:\/\/cdn.pixabay.com\/photo\/2015\/06\/26\/10\/17\/smiley-822365_960_720.jpg",$/;"	p	variable:pictureDictionary
+bling	main.js	/^  bling: "flashy, ostentatious jewelry",$/;"	p	variable:dictionary
+bling	main.js	/^  bling:$/;"	p	variable:pictureDictionary
+boom	main.js	/^  boom: "a deep prolonged loud noise",$/;"	p	variable:dictionary
+boom	main.js	/^  boom: "https:\/\/cdn.pixabay.com\/photo\/2016\/04\/12\/21\/17\/explosion-1325471_1280.jpg",$/;"	p	variable:pictureDictionary
+buzz	main.js	/^  buzz: "https:\/\/cdn.pixabay.com\/photo\/2020\/02\/13\/10\/29\/bees-4845211_1280.jpg",$/;"	p	variable:pictureDictionary
+buzz	main.js	/^  buzz: "the sound of rapid vibration",$/;"	p	variable:dictionary
+categoryContainer	main.js	/^let categoryContainer = document.createElement("div");$/;"	v
+caw	main.js	/^  caw: "https:\/\/cdn.pixabay.com\/photo\/2017\/02\/16\/11\/13\/bird-2071185_1280.jpg",$/;"	p	variable:pictureDictionary
+caw	main.js	/^  caw: "utter a cry, characteristic of crows, rooks, or ravens",$/;"	p	variable:dictionary
+chant	main.js	/^  chant: "a repetitive song in which syllables are assigned to a tone",$/;"	p	variable:dictionary
+chant	main.js	/^  chant:$/;"	p	variable:pictureDictionary
+chatter	main.js	/^  chatter: "https:\/\/cdn.pixabay.com\/photo\/2014\/07\/25\/08\/55\/bar-401546_1280.jpg",$/;"	p	variable:pictureDictionary
+chatter	main.js	/^  chatter: "talk socially without exchanging too much information",$/;"	p	variable:dictionary
+clatter	main.js	/^  clatter:$/;"	p	variable:dictionary
+clatter	main.js	/^  clatter:$/;"	p	variable:pictureDictionary
+clunk	main.js	/^  clunk: "a heavy dull sound (as made by impact of heavy objects)",$/;"	p	variable:dictionary
+clunk	main.js	/^  clunk:$/;"	p	variable:pictureDictionary
+constructor	main.js	/^  constructor(emotion, description, color, onomatopoeia) {$/;"	m	class:EmotionObject
+constructor	main.js	/^  constructor(word, definition, pictureUrl) {$/;"	m	class:EmotionObject
+constructor	main.js	/^  constructor(word, definition, pictureUrl) {$/;"	m	class:EmotionObject.getHtmlContainerString.Word
+constructor	main.js	/^  constructor(word, definition, pictureUrl) {$/;"	m	class:Word
+container	main.js	/^let container = `<div class="container d-flex justify-content-center flex-wrap"><\/div>`;$/;"	v
+container	main.js	/^let container = `<div class="container d-flex justify-content-center flex-wrap">`;$/;"	v
+container	main.js	/^let container = document.createElement("div");$/;"	v
+container	main.js	/^let container =$/;"	v
+content	main.js	/^let content = '<div class="container d-flex justify-content-center flex-wrap">';$/;"	v
+crawl	main.js	/^  crawl: "https:\/\/cdn.pixabay.com\/photo\/2017\/11\/23\/07\/47\/baby-2972221__340.jpg",$/;"	p	variable:pictureDictionary
+crawl	main.js	/^  crawl:$/;"	p	variable:dictionary
+createHtml	main.js	/^function createHtml(container) {$/;"	f
+dictionary	main.js	/^const dictionary = {$/;"	v
+disgusted	main.js	/^  disgusted: "😒",$/;"	p	variable:emoji
+emoji	main.js	/^const emoji = {$/;"	v
+emotions	main.js	/^const emotions = [$/;"	M	class:EmotionObject
+emotions	main.js	/^const emotions = [$/;"	v
+emotionsContainer	main.js	/^let emotionsContainer = document.createElement("div");$/;"	v
+fearful	main.js	/^  fearful: "😖",$/;"	p	variable:emoji
+flick	main.js	/^  flick: "throw or toss with a quick motion",$/;"	p	variable:dictionary
+flick	main.js	/^  flick:$/;"	p	variable:pictureDictionary
+gargle	main.js	/^  gargle:$/;"	p	variable:dictionary
+gargle	main.js	/^  gargle:$/;"	p	variable:pictureDictionary
+getCategoryHtml	main.js	/^  getCategoryHtml() {$/;"	m	class:EmotionObject
+getHtmlContainerString	main.js	/^  getHtmlContainerString() {$/;"	m	class:EmotionObject
+getOnomatopoeiaHtml	main.js	/^  getOnomatopoeiaHtml() {$/;"	m	class:EmotionObject
+getOnomatopoeiaWords	main.js	/^  getOnomatopoeiaWords() {$/;"	m	class:EmotionObject
+giggle	main.js	/^  giggle: "a light, silly laugh.",$/;"	p	variable:dictionary
+giggle	main.js	/^  giggle:$/;"	p	variable:pictureDictionary
+grunt	main.js	/^  grunt: "https:\/\/cdn.pixabay.com\/photo\/2010\/11\/29\/nepal-419__480.jpg",$/;"	p	variable:pictureDictionary
+grunt	main.js	/^  grunt: "issue a low, animal-like noise",$/;"	p	variable:dictionary
+happy	main.js	/^  happy: "🥳",$/;"	p	variable:emoji
+hiss	main.js	/^  hiss: "https:\/\/cdn.pixabay.com\/photo\/2016\/10\/13\/23\/30\/cat-1739091_1280.jpg",$/;"	p	variable:pictureDictionary
+hiss	main.js	/^  hiss: `make a sharp, elongated "s" sound`,$/;"	p	variable:dictionary
+honk	main.js	/^  honk: "https:\/\/cdn.pixabay.com\/photo\/2017\/02\/28\/14\/37\/geese-2105918_1280.jpg",$/;"	p	variable:pictureDictionary
+honk	main.js	/^  honk: "the cry of a goose or any loud sound resembling it",$/;"	p	variable:dictionary
+oink	main.js	/^  oink: "https:\/\/cdn.pixabay.com\/photo\/2019\/03\/02\/15\/32\/pig-4030013_1280.jpg",$/;"	p	variable:pictureDictionary
+oink	main.js	/^  oink: "the short low gruff noise of the kind made by hogs",$/;"	p	variable:dictionary
+pictureDictionary	main.js	/^const pictureDictionary = {$/;"	v
+roar	main.js	/^  roar: "https:\/\/cdn.pixabay.com\/photo\/2018\/04\/13\/21\/24\/lion-3317670_1280.jpg",$/;"	p	variable:pictureDictionary
+roar	main.js	/^  roar: "make a loud noise, as of an animal",$/;"	p	variable:dictionary
+sad	main.js	/^  sad: "🥺",$/;"	p	variable:emoji
+smack	main.js	/^  smack: "a blow from a flat object (as an open hand)",$/;"	p	variable:dictionary
+smack	main.js	/^  smack:$/;"	p	variable:pictureDictionary
+string	main.js	/^      string += `$/;"	M	class:EmotionObject
+surprised	main.js	/^  surprised: "😲",$/;"	p	variable:emoji
 target	index.html	/^<div id="target"><\/div>$/;"	I
-waah	const.js	/^  waah: "https:\/\/cdn.pixabay.com\/photo\/2017\/01\/18\/02\/18\/emotions-1988745_1280.jpg",$/;"	p	variable:pictureDictionary
-waah	const.js	/^  waah: "sound made when crying by babies",$/;"	p	variable:dictionary
-whack	const.js	/^  whack: "the act of hitting vigorously",$/;"	p	variable:dictionary
-whack	const.js	/^  whack:$/;"	p	variable:pictureDictionary
-whine	const.js	/^  whine: "a complaint uttered in a plaintive way",$/;"	p	variable:dictionary
-whine	const.js	/^  whine:$/;"	p	variable:pictureDictionary
-word	main.js	/^let word = new Word();$/;"	v
-zing	const.js	/^  zing: "https:\/\/cdn.pixabay.com\/photo\/2017\/09\/14\/16\/38\/fiber-optic-2749588_1280.jpg",$/;"	p	variable:pictureDictionary
-zing	const.js	/^  zing: "sound my by something energetic",$/;"	p	variable:dictionary
+target	main.js	/^let target = document.getElementById("target");$/;"	v
+waah	main.js	/^  waah: "https:\/\/cdn.pixabay.com\/photo\/2017\/01\/18\/02\/18\/emotions-1988745_1280.jpg",$/;"	p	variable:pictureDictionary
+waah	main.js	/^  waah: "sound made when crying by babies",$/;"	p	variable:dictionary
+whack	main.js	/^  whack: "the act of hitting vigorously",$/;"	p	variable:dictionary
+whack	main.js	/^  whack:$/;"	p	variable:pictureDictionary
+whine	main.js	/^  whine: "a complaint uttered in a plaintive way",$/;"	p	variable:dictionary
+whine	main.js	/^  whine:$/;"	p	variable:pictureDictionary
+zing	main.js	/^  zing: "https:\/\/cdn.pixabay.com\/photo\/2017\/09\/14\/16\/38\/fiber-optic-2749588_1280.jpg",$/;"	p	variable:pictureDictionary
+zing	main.js	/^  zing: "sound my by something energetic",$/;"	p	variable:dictionary
