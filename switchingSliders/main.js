@@ -1,29 +1,82 @@
-let targetElement = document.getElementById("target-p");
-const customEvent = new Event("myUniqueEvent");
+const target = document.getElementById("target");
+const sliderItems = document.querySelectorAll(
+  "#target .slider-data .slider-item"
+);
 
-function randomFunction(event) {
-  console.log("The event just ran!!!!!");
+let sliderShow = document.createElement("div");
+let main = document.createElement("div");
+let extra = document.createElement("div");
 
-  // イベントに関する追加情報をログに記録します。このイベントオブジェクトは常にいくつかのメンバ変数を含み、その中にはtarget,timestamp,typeメンバが含まれます。
+sliderShow.classList.add("col-12", "d-flex", "flex-nowrap", "overflow-hiddens");
+main.classList.add("main", "full-width");
+extra.classList.add("extra", "full-width");
 
-  // イベントが発生した要素
-  console.log(event.target);
+main.append(sliderItems[0]);
 
-  // 現在のドキュメントの生成からイベントが作成された時点までの時間（ミリ秒単位）
-  console.log(event.timeStamp);
+sliderShow.append(main);
+sliderShow.append(extra);
+target.append(sliderShow);
 
-  // イベントタイプ
-  console.log(event.type);
+let controls = document.createElement("div");
+controls.classList.add("offset-5", "mt-2");
 
-  // eventのデータ型
-  console.log(typeof event);
+let leftBtn = document.createElement("button");
+leftBtn.classList.add("btn", "btn-light");
+leftBtn.innerHTML = "<";
+
+let rightBtn = document.createElement("button");
+rightBtn.classList.add("btn", "btn-light");
+rightBtn.innerHTML = ">";
+
+controls.append(leftBtn);
+controls.append(rightBtn);
+target.append(controls);
+
+main.setAttribute("data-index", "0");
+
+// animationTypeというパラメータを追加します。
+function slideJump(steps, animationType) {
+  let index = parseInt(main.getAttribute("data-index"));
+  let currentElement = sliderItems.item(index);
+
+  index += steps;
+
+  if (index < 0) index = sliderItems.length - 1;
+  else if (index >= sliderItems.length) index = 0;
+
+  let nextElement = sliderItems.item(index);
+
+  main.setAttribute("data-index", index.toString());
+
+  // animateMain関数の呼び出し
+  animateMain(currentElement, nextElement, animationType);
 }
 
-targetElement.addEventListener("myUniqueEvent", randomFunction);
+function animateMain(currentElement, nextElement, animationType) {
+  main.innerHTML = "";
+  main.append(nextElement);
 
-targetElement.dispatchEvent(customEvent);
+  extra.innerHTML = "";
+  extra.append(currentElement);
 
-// ブラウザに表示されているテキストをクリックしてみましょう。
-targetElement.addEventListener("click", function (e) {
-  console.log(e.timeStamp);
+  main.classList.add("expand-animation");
+  extra.classList.add("deplete-animation");
+
+  if (animationType === "right") {
+    sliderShow.innerHTML = "";
+    sliderShow.append(extra);
+    sliderShow.append(main);
+  } else if (animationType === "left") {
+    sliderShow.innerHTML = "";
+    sliderShow.append(main);
+    sliderShow.append(extra);
+  }
+}
+
+rightBtn.addEventListener("click", function () {
+  slideJump(-1, "left");
+});
+
+leftBtn.addEventListener("click", function () {
+  slideJump(+1, "right");
 });

@@ -9,17 +9,236 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/096dc1c1/
+--	style.css	/^<!-- クラスを切り替えるイベント。箱を表示\/非表示させます。 -->$/;"	s
+-- onclick	style.css	/^  <!-- onclick属性。要素がクリックされた時にステートメントが実行されま/;"	s
+-->	style.css	/^  <!-- onclick属性。要素がクリックされた時にステートメントが実行されま/;"	s
+-->	style.css	/^<!-- クラスを切り替えるイベント。箱を表示\/非表示させます。 -->$/;"	s
+.box	style.css	/^.box {$/;"	c
+.deplete-animation	style.css	/^.deplete-animation {$/;"	c
+.expand-animation	style.css	/^.expand-animation {$/;"	c
+.full-width	style.css	/^.full-width {$/;"	c
+>	style.css	/^  <div class="box bg-primary d-block" id="pBlock"><\/div>$/;"	s
+>	style.css	/^  <div class="box bg-secondary d-block"><\/div>$/;"	s
+>	style.css	/^  \/>$/;"	s
+>	style.css	/^<div class="m-2">$/;"	s
+>	style.css	/^<script src="main.js"><\/script>$/;"	s
+> Display Toggle	style.css	/^    Display Toggle$/;"	s
 AnonymousClassb43910f50101	main.js	/^      class="ml-1"$/;"	c
+Password	index.html	/^    <h3 class="mt-5">Password<\/h3>$/;"	j
+Password	index.html	/^  <h3 class="mt-5">Password<\/h3>$/;"	j
+all	main.js	/^let all = document.querySelectorAll(".btn");$/;"	v
+all	main.js	/^let all = document.querySelectorAll(".op-btn");$/;"	v
+allBtns	main.js	/^const allBtns = document.querySelectorAll(".operator-btn");$/;"	C
+animateMain	main.js	/^function animateMain(current, next, direction) {$/;"	f
+animateMain	main.js	/^function animateMain(current,next,direction) {$/;"	f
+animateMain	main.js	/^function animateMain(currentElement, nextElement, animationType) {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^  operatorButtons[index].addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^  p.addEventListener("mouseout", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^  p.addEventListener("mouseover", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^  target.addEventListener("mouseover", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^body.addEventListener("keydown", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^body.addEventListener("keydown", function () {});$/;"	f
+anonymousFunctionb43910f50100	main.js	/^body.addEventListener("keydown", function (e) {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^body.addEventListener("keydown", function (event) {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^body.addEventListener("keydown", function (event) {});$/;"	f
+anonymousFunctionb43910f50100	main.js	/^body.addEventListener("keypress", function (event) {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^btn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^button.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^button.addEventListener("click", function () {});$/;"	f
 anonymousFunctionb43910f50100	main.js	/^hElement.addEventListener("echo", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^leftBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^lockBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^plusBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^rightBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^rightBtn.addEventListener("click", function () {});$/;"	f
+anonymousFunctionb43910f50100	main.js	/^target1.addEventListener("mouseout", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^target1.addEventListener("mouseout", function (e) {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^target2.addEventListener("mouseover", function () {$/;"	f
 anonymousFunctionb43910f50100	main.js	/^targetElement.addEventListener("click", function (e) {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^  p.addEventListener("mouseout", function () {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^  p.addEventListener("mouseover", function () {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^leftBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^minusBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^rightBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^target2.addEventListener("mouseout", function () {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^target2.addEventListener("mouseover", function () {$/;"	f
+anonymousFunctionb43910f50300	main.js	/^multipleBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50300	main.js	/^target2.addEventListener("mouseout", function () {$/;"	f
+anonymousFunctionb43910f50300	main.js	/^target3.addEventListener("keypress", function (eventObject) {$/;"	f
+anonymousFunctionb43910f50400	main.js	/^divideBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50400	main.js	/^target3.addEventListener("keypress", function (eventObject) {$/;"	f
+answer	index.html	/^        <input type="text" id="answer" disabled>$/;"	I
+answer	index.html	/^    <input type="text" id="answer" disabled \/>$/;"	I
+answer	main.js	/^const answer = document.getElementById("answer");$/;"	C
+answer	main.js	/^let answer = document.querySelector("#answer");$/;"	v
+append	main.js	/^let append = document.createElement("p");$/;"	v
+applyOperation	main.js	/^function applyOperation(op1, op2, operator) {$/;"	f
+body	main.js	/^let body = document.getElementsByTagName("body").item(0);$/;"	v
+body	main.js	/^let body = document.querySelector("body");$/;"	v
+box	main.js	/^let box = document.querySelector("#box");$/;"	v
+box	main.js	/^let box = document.querySelector("#pBlock");$/;"	v
+box	main.js	/^let box = document.querySelector(".box");$/;"	v
+boxes	main.js	/^let boxes = document.querySelectorAll("#target", ".d-none", ".box");$/;"	v
+boxes	main.js	/^let boxes = document.querySelectorAll(".box");$/;"	v
+btn	main.js	/^let btn = document.querySelector(".btn");$/;"	v
+btns	main.js	/^let btns = document.querySelectorAll(".btn");$/;"	v
+button	main.js	/^let button = document.querySelector(".btn");$/;"	v
+button class	style.css	/^    class="btn btn-primary mt-2"$/;"	s
+button>	style.css	/^  <\/button>$/;"	s
+buttons	main.js	/^let buttons = document.createElement("div");$/;"	v
+checkBox	main.js	/^let checkBox = document.getElementById("passwordClickCheck");$/;"	v
+controls	main.js	/^let controls = document.createElement("div");$/;"	v
+crossorigin	style.css	/^    crossorigin="anonymous"$/;"	s
+currentHeight	main.js	/^let currentHeight = box.style.height;$/;"	v
+currentHeight	main.js	/^let currentHeight = box.style.offsetheight;$/;"	v
 customEvent	main.js	/^const customEvent = new Event("myUniqueEvent");$/;"	C
+dataSecret	index.html	/^      <div id="dataSecret" data-secret="hello world"><\/div>$/;"	I
+devideOperator	index.html	/^                <button id="devideOperator" class="btn btn-primary op-btn">\/<\/button>$/;"	I
+display	main.js	/^function display(ele) {$/;"	f
+displayBlock	main.js	/^function displayBlock(ele) {$/;"	f
+displayNone	main.js	/^function displayNone(ele) {$/;"	f
+displayToggle	main.js	/^function displayToggle(ele) {$/;"	f
+displayToggle	main.js	/^function displayToggle(ele1, ele2) {$/;"	f
+div class	style.css	/^  <div class="box bg-primary d-block" id="pBlock"><\/div>$/;"	s
+div class	style.css	/^  <div class="box bg-secondary d-block"><\/div>$/;"	s
+div class	style.css	/^<div class="m-2">$/;"	s
+div>	style.css	/^  <div class="box bg-primary d-block" id="pBlock"><\/div>$/;"	s
+div>	style.css	/^  <div class="box bg-secondary d-block"><\/div>$/;"	s
+div>	style.css	/^<\/div>$/;"	s
+divideBtn	main.js	/^let divideBtn = document.querySelector("#divideOperator");$/;"	v
+divideOperator	index.html	/^            <button id="divideOperator" class="operator-btn">\/<\/button>$/;"	I
+divideOperator	index.html	/^            <button id="divideOperator">\/<\/button>$/;"	I
+divideOperator	index.html	/^      <button id="divideOperator" class="operator-btn">\/<\/button>$/;"	I
+divideOperator	index.html	/^      <button id="divideOperator">\/<\/button>$/;"	I
+ele1	main.js	/^let ele1 = document.querySelector("#pBlock");$/;"	v
+ele2	main.js	/^let ele2 = document.querySelector("#sBlock");$/;"	v
+extra	main.js	/^let extra = document.createElement("div");$/;"	v
 hElement	main.js	/^let hElement = document.getElementById("target-h");$/;"	v
+head>	style.css	/^<\/head>$/;"	s
+head>	style.css	/^<head>$/;"	s
+height	main.js	/^  let height = element.offsetHeight;$/;"	v
+heightStep	main.js	/^let heightStep = 10;$/;"	v
+href	style.css	/^    href="https:\/\/stackpath.bootstrapcdn.com\/bootstrap\/4.5.0\/css\/bootstrap.min.css"$/;"	s
+id	style.css	/^  <div class="box bg-primary d-block" id="pBlock"><\/div>$/;"	s
+inner-div	index.html	/^    <div id="inner-div">$/;"	I
+innerDiv	main.js	/^let innerDiv = document.getElementById("inner-div");$/;"	v
+innerP	main.js	/^let innerP = innerDiv.querySelectorAll(".inner-p");$/;"	v
+integrity	style.css	/^    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"$/;"	s
+leftBtn	main.js	/^let leftBtn = document.createElement("button");$/;"	v
+link rel	style.css	/^    rel="stylesheet"$/;"	s
+lockBtn	main.js	/^let lockBtn = document.getElementById("button");$/;"	v
+lockBtn	main.js	/^let lockBtn = document.getElementById("lockedPassDiv");$/;"	v
+lockBtn	main.js	/^let lockBtn = document.querySelector("button");$/;"	v
+lockPass	main.js	/^function lockPass() {$/;"	f
+lockedPassDiv	index.html	/^    <div id="lockedPassDiv" class="col-12"> $/;"	I
+lockedPassDiv	index.html	/^    <div id="lockedPassDiv" class="col-12">$/;"	I
+lockedPassDiv	index.html	/^  <div id="lockedPassDiv" class="col-12"><\/div>$/;"	I
+lockedPassDiv	main.js	/^let lockedPassDiv = document.querySelector("#lockedPassDiv");$/;"	v
+logClick	main.js	/^function logClick() {$/;"	f
+main	main.js	/^let main = document.createElement("div");$/;"	v
+minusBtn	main.js	/^let minusBtn = document.querySelector("#minusOperator");$/;"	v
+minusBtn	main.js	/^let minusBtn = document.querySelector("#minuxOperator");$/;"	v
+minusBtn	main.js	/^let minusBtn = null;$/;"	v
+minusOperator	index.html	/^                <button id="minusOperator" class="btn btn-primary op-btn">-<\/button>$/;"	I
+minusOperator	index.html	/^            <button id="minusOperator" class="operator-btn">-<\/button>$/;"	I
+minusOperator	index.html	/^            <button id="minusOperator">-<\/button>$/;"	I
+minusOperator	index.html	/^      <button id="minusOperator" class="operator-btn">-<\/button>$/;"	I
+minusOperator	index.html	/^      <button id="minusOperator">-<\/button>$/;"	I
+multipleBtn	main.js	/^let multipleBtn = document.querySelector("#timesOperator");$/;"	v
+multiplyOperator	index.html	/^                <button id="multiplyOperator" class="btn btn-primary op-btn">*<\/button>$/;"	I
+onclick	style.css	/^    onclick="displayNone(document.getElementById(`pBlock`));"$/;"	s
+op1	index.html	/^            <input class="col-12" type="text" id="op1" value="2">$/;"	I
+op1	index.html	/^            <input class="col-12" type="text" id="op1">$/;"	I
+op1	index.html	/^    <input class="col-12" type="text" id="op1" \/>$/;"	I
+op1	main.js	/^const op1 = document.getElementById("op1");$/;"	C
+op1	main.js	/^const op1 = document.getElementById("operator1");$/;"	C
+op1	main.js	/^let op1 = document.querySelector("#op1");$/;"	v
+op1	main.js	/^let op1 = document.querySelector("#operator1").value;$/;"	v
+op1	main.js	/^let op1 = document.querySelector("#opertor1").value;$/;"	v
+op1	main.js	/^let op1 = document.querySelector("#opertor1");$/;"	v
+op1	main.js	/^let op1 = parseInt(document.querySelector("#operator1").value);$/;"	v
+op2	index.html	/^            <input class="col-12" type="text" id="op2" value="6">$/;"	I
+op2	index.html	/^            <input class="col-12" type="text" id="op2">$/;"	I
+op2	index.html	/^    <input class="col-12" type="text" id="op2" \/>$/;"	I
+op2	main.js	/^const op2 = document.getElementById("op2");$/;"	C
+op2	main.js	/^const op2 = document.getElementById("operator2");$/;"	C
+op2	main.js	/^let op2 = document.querySelector("#op2");$/;"	v
+op2	main.js	/^let op2 = document.querySelector("#operator2").value;$/;"	v
+op2	main.js	/^let op2 = document.querySelector("#opertor2").value;$/;"	v
+op2	main.js	/^let op2 = parseInt(document.querySelector("#operator2").value);$/;"	v
 operator1	index.html	/^        <input type="text" id="operator1" value="2">$/;"	I
 operator1	index.html	/^    <input type="text" id="operator1" value="2" \/>$/;"	I
 operator2	index.html	/^        <input type="text" id="operator2" value="6">$/;"	I
 operator2	index.html	/^    <input type="text" id="operator2" value="6" \/>$/;"	I
+operatorButtons	main.js	/^const operatorButtons = document.querySelectorAll(".operator-btn");$/;"	C
+outer	main.js	/^let outer = document.getElementById("outer-div");$/;"	v
+outer-div	index.html	/^<div id="outer-div">$/;"	I
+outerP	main.js	/^let outerP = innerDiv.querySelectorAll("#outer-div");$/;"	v
+pBlock	index.html	/^    <div class="box bg-danger d-block" id="pBlock">$/;"	I
+pBlock	index.html	/^    <div class="box bg-primary d-block" id="pBlock">$/;"	I
+pBlock	index.html	/^  <div class="box bg-danger d-block" id="pBlock"><\/div>$/;"	I
+pBlock	index.html	/^  <div class="box bg-primary d-block" id="pBlock"><\/div>$/;"	I
+pBlock	main.js	/^const pBlock = document.getElementById("pBlock");$/;"	C
+password	main.js	/^let password = document.getElementById("passwordClick");$/;"	v
+passwordClick	index.html	/^        <input id="passwordClick" type="password">$/;"	I
+passwordClick	index.html	/^    <input id="passwordClick" type="password" \/>$/;"	I
+passwordClickCheck	index.html	/^        <input type="checkbox" id="passwordClickCheck" onclick="passwordToggle()">$/;"	I
+passwordClickCheck	index.html	/^        <input type="checkbox" id="passwordClickCheck">$/;"	I
+passwordClickCheck	index.html	/^    <input type="checkbox" id="passwordClickCheck" onclick="passwordToggle()" \/>$/;"	I
+passwordStars	main.js	/^function passwordStars(password) {$/;"	f
+passwordStars	main.js	/^function passwordStars(string) {$/;"	f
+passwordToggle	main.js	/^function passwordToggle() {$/;"	f
+plusBtn	main.js	/^let plusBtn = document.querySelector("#plusOperator");$/;"	v
+plusBtn	main.js	/^let plusBtn = null;$/;"	v
+plusOperator	index.html	/^                <button id="plusOperator" class="btn btn-primary op-btn">+<\/button>$/;"	I
+plusOperator	index.html	/^            <button id="plusOperator" class="operator-btn">+<\/button>$/;"	I
+plusOperator	index.html	/^            <button id="plusOperator">+<\/button>$/;"	I
+plusOperator	index.html	/^      <button id="plusOperator" class="operator-btn">+<\/button>$/;"	I
+plusOperator	index.html	/^      <button id="plusOperator">+<\/button>$/;"	I
+pxDecrease	main.js	/^  function pxDecrease(element) {$/;"	f
+pxDecrease	main.js	/^  function pxDecrease(element) {$/;"	f	function:anonymousFunctionb43910f50100
+pxDecrease	main.js	/^function pxDecrease() {$/;"	f
+pxDecrease	main.js	/^function pxDecrease(element) {$/;"	f
+pxDecrease	main.js	/^function pxDecrease(element) {$/;"	f	function:anonymousFunctionb43910f50100
+pxIncrease	main.js	/^  function pxIncrease(element) {$/;"	f
+pxIncrease	main.js	/^  function pxIncrease(element) {$/;"	f	function:anonymousFunctionb43910f50100
+pxIncrease	main.js	/^function pxIncrease() {$/;"	f
+pxIncrease	main.js	/^function pxIncrease(element) {$/;"	f
+pxIncrease	main.js	/^function pxIncrease(element) {$/;"	f	function:anonymousFunctionb43910f50100
 randomFunction	main.js	/^function randomFunction() {$/;"	f
 randomFunction	main.js	/^function randomFunction(event) {$/;"	f
+redBox	main.js	/^let redBox = document.querySelector("#pBlock");$/;"	v
+rightBtn	main.js	/^let rightBtn = document.createElement("button");$/;"	v
+sBlock	index.html	/^    <div class="box bg-secondary d-none" id="sBlock">$/;"	I
+sBlock	index.html	/^  <div class="box bg-secondary d-none" id="sBlock"><\/div>$/;"	I
+script src	style.css	/^<script src="main.js"><\/script>$/;"	s
+script>	style.css	/^<script src="main.js"><\/script>$/;"	s
+slideJump	main.js	/^function slideJump(steps) {$/;"	f
+slideJump	main.js	/^function slideJump(steps, animationType) {$/;"	f
+sliderItems	main.js	/^const sliderItems = document.querySelectorAll("#target .slider-data .slider-item");$/;"	C
+sliderItems	main.js	/^const sliderItems = document.querySelectorAll($/;"	C
+sliderShow	main.js	/^let sliderShow = document.createElement("div");$/;"	v
+smallTextOuter	main.js	/^let smallTextOuter = outer.querySelectorAll(".small-text");$/;"	v
+step	main.js	/^const step = 10;$/;"	C
+step	main.js	/^const step = 30;$/;"	C
+target	index.html	/^<div id="target" class="m-5">$/;"	I
+target	main.js	/^const target = document.getElementById("target");$/;"	C
+target	main.js	/^let target = document.querySelector("#target");$/;"	v
+target	main.js	/^let target = document.querySelector(".target");$/;"	v
 target-h	index.html	/^    <h1 id="target-h">The second Event<\/p>$/;"	I
 target-p	index.html	/^    <p id="target-p">Incoming Event<\/p>$/;"	I
+target1	index.html	/^    <p id="target1">Click me<\/p>$/;"	I
+target1	main.js	/^let target1 = document.getElementById("target1");$/;"	v
+target2	index.html	/^    <p id="target2">Hover me<\/p>$/;"	I
+target2	main.js	/^let target2 = document.getElementById("target2");$/;"	v
+target3	index.html	/^    <input type="text" id="target3" placeholder="Write inside of me">$/;"	I
+target3	main.js	/^let target3 = document.getElementById("target3");$/;"	v
 targetElement	main.js	/^let targetElement = document.getElementById("target-p");$/;"	v
+timesOperator	index.html	/^            <button id="timesOperator" class="operator-btn">*<\/button>$/;"	I
+timesOperator	index.html	/^            <button id="timesOperator">*<\/button>$/;"	I
+timesOperator	index.html	/^      <button id="timesOperator" class="operator-btn">*<\/button>$/;"	I
+timesOperator	index.html	/^      <button id="timesOperator">*<\/button>$/;"	I
+toDisplay	main.js	/^let toDisplay = document.querySelector("#sBlock");$/;"	v
+total	index.html	/^            <input class="col-12" type="text" id="total" disabled>$/;"	I
+total	main.js	/^const total = document.getElementById("total");$/;"	C
+word	main.js	/^let word = document.querySelector("#dataSecret").getAttribute("data-secret");$/;"	v
