@@ -58,6 +58,7 @@ animateMain	main.js	/^  static animateMain(currentElement, nextElement, animatio
 animateMain	main.js	/^function animateMain(currentElement, nextElement, animationType) {$/;"	f
 animateMain	main.js	/^function animateMain(currentImage, nextImage) {$/;"	f
 animateMain	sample.js	/^  static animateMain(currentElement, nextElement, animationType) {$/;"	m	class:Controller
+animateMain	sample.js	/^  static animateMain(currentElement, nextElement, animationType) {$/;"	m	class:Page
 animateMain	sample.js	/^function animateMain(currentElement, nextElement, animationType) {$/;"	f
 animateMain	sample.js	/^function animateMain(currentImage, nextImage) {$/;"	f
 animation	main.js	/^function animation(current, next) {$/;"	f
