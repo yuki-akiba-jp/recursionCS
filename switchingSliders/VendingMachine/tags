@@ -92,6 +92,7 @@ btnCon	sample.js	/^  btnCon: document.getElementById("btnContainer"),$/;"	p	vari
 btnContainer	index.html	/^                    <div id='btnContainer'>$/;"	I
 btnContainer	index.html	/^        <div id="btnContainer">$/;"	I
 btnContainer	index.html	/^        <div id="btnContainer"><\/div>$/;"	I
+btnContainer	sample.js	/^  btnContainer: document.getElementById("infoContainer"),$/;"	p	variable:config
 btnDiv	main.js	/^  let btnDiv = document.createElement("div");$/;"	v
 btnDiv	main.js	/^let btnDiv = document.createElement("div");$/;"	v
 btnDiv	sample.js	/^let btnDiv = document.createElement("div");$/;"	v
@@ -99,6 +100,7 @@ calculatorDiv	main.js	/^let calculatorDiv = document.createElement("div");$/;"	v
 calculatorDiv	sample.js	/^let calculatorDiv = document.createElement("div");$/;"	v
 changeCharactor	main.js	/^function changeCharactor() {$/;"	f
 changeCharactor	main.js	/^function changeCharactor() {}$/;"	f
+changeCharactors	sample.js	/^function changeCharactors(currentIndex) {$/;"	f
 charactors	main.js	/^const charactors = [$/;"	v
 charactors	main.js	/^const charactors = [new Charactor("lufy", ".\/pngs\/lufy.png")];$/;"	v
 charactors	main.js	/^const charactors = {$/;"	C
@@ -113,6 +115,7 @@ companyContainer	index.html	/^                    <div id='companyContainer'>$/;
 companyContainer	index.html	/^        <div id="companyContainer"><\/div>$/;"	I
 config	main.js	/^const config = {$/;"	v
 config	sample.js	/^const config = {$/;"	v
+config	sample.js	/^const config= {$/;"	v
 constructor	main.js	/^    constructor(name, price, imgUrl){$/;"	m	class:Animal
 constructor	main.js	/^  constructor(id, name, bounty, imgURL) {$/;"	m	class:People
 constructor	main.js	/^  constructor(name, imgURL) {$/;"	m	class:Charactor
@@ -135,6 +138,7 @@ createDisplayDiv	main.js	/^  static createDisplayDiv(bgColor, font, textColor) {
 createHTML	main.js	/^  static createHTML() {$/;"	m	class:Page
 createHtml	main.js	/^function createHtml() {$/;"	f
 createInfoContainer	main.js	/^    static createInfoContainer(obj) {$/;"	m	class:View
+createInfoContainer	main.js	/^  static createInfoContainer(charactor) {$/;"	m	class:View
 createInfoContainer	main.js	/^  static createInfoContainer(obj) {$/;"	m	class:View
 createInfoContainer	sample.js	/^  static createInfoContainer(obj) {$/;"	m	class:View
 createLeft	main.js	/^function createLeft() {$/;"	f
@@ -147,6 +151,7 @@ createRightSection	main.js	/^  static createRightSection() {$/;"	m	class:Page
 createSlider	main.js	/^    static createSlider() {$/;"	m	class:View
 createSlider	main.js	/^  static createSlider() {$/;"	m	class:View
 createSlider	sample.js	/^  static createSlider() {$/;"	m	class:View
+createTemplate	sample.js	/^function createTemplate() {$/;"	f
 crossorigin	style.css	/^  crossorigin="anonymous"$/;"	s
 currentBtn	main.js	/^  let currentBtn = document.createElement("button");$/;"	v
 currentBtn	sample.js	/^  let currentBtn = document.createElement("button");$/;"	v
@@ -169,6 +174,7 @@ infoCon	sample.js	/^  infoCon: document.getElementById("infoContainer"),$/;"	p	v
 infoContainer	index.html	/^                    <div id='infoContainer'>$/;"	I
 infoContainer	index.html	/^        <div id="infoContainer">$/;"	I
 infoContainer	index.html	/^        <div id="infoContainer"><\/div>$/;"	I
+infoContainer	sample.js	/^  infoContainer: document.getElementById("infoContainer"),$/;"	p	variable:config
 initializeApp	main.js	/^function initializeApp() {$/;"	f
 initializeApp	main.js	/^function initializeApp(){$/;"	f
 initializeApp	sample.js	/^function initializeApp() {$/;"	f
@@ -191,6 +197,7 @@ main	index.html	/^          <div id="main" class="main full-width" data-index="0
 main	index.html	/^          <div id="main" class="main full-width" data-index="0"><\/div>$/;"	I
 main	index.html	/^          <div id="main" class="main full-width" data-index="0">hello<\/div>$/;"	I
 main	main.js	/^let main = document.createElement("div");$/;"	v
+main	sample.js	/^  main: document.getElementById("main"),$/;"	p	variable:config
 main	sample.js	/^let main = document.createElement("div");$/;"	v
 mainImg	main.js	/^let mainImg = document.createElement("img");$/;"	v
 mainImg	sample.js	/^let mainImg = document.createElement("img");$/;"	v
@@ -231,6 +238,8 @@ slider	index.html	/^        id="slider"$/;"	I
 slider	index.html	/^      <div id="slider" class="col-md-7 col-12  p-2 d-flex justify-content-center align-items-cen/;"	I
 slider	index.html	/^      <div id="slider" class="col-md-7 col-12 p-2 d-flex justify-content-center align-items-cent/;"	I
 slider	index.html	/^      <div id="slider"><\/div>$/;"	I
+slider	sample.js	/^  slider: document.getElementById("slider") $/;"	p	variable:config
+slider	sample.js	/^  slider: document.getElementById("slider"),$/;"	p	variable:config
 sliderCon	main.js	/^    sliderCon : document.getElementById('slider'),$/;"	p	variable:config
 sliderCon	main.js	/^  sliderCon: document.getElementById("slider"),$/;"	p	variable:config
 sliderCon	sample.js	/^  sliderCon: document.getElementById("slider"),$/;"	p	variable:config

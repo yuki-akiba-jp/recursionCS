@@ -129,10 +129,10 @@ class View {
     }
   }
 
-  static createInfoContainer(obj) {
+  static createInfoContainer(charactor) {
     config.infoCon.innerHTML = `
             <div class='col-12 px-0 pl-2'>
-                <p class='m-0'>Name : ${obj.name}</p>
+                <p class='m-0'>Name : ${charactor.name}</p>
             </div>
         `;
   }
