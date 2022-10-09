@@ -1,0 +1,42 @@
+/* ここからCSSを記述してください。 */
+p {
+  margin: 0;
+  letter-spacing: 0.15rem;
+  line-height: 2;
+}
+
+.vh-75 {
+  height: 75vh;
+}
+
+.bg-pink {
+  background: #ffc2da;
+}
+
+.imgFit {
+  object-fit: contain;
+}
+
+.full-width {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.deplete-animation {
+  animation: deplete 1.5s linear forwards;
+}
+
+.expand-animation {
+  animation: deplete 1.5s linear reverse forwards;
+}
+
+@keyframes deplete {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 0%;
+    opacity: 0;
+  }
+}
