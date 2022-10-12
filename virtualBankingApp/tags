@@ -25,33 +25,183 @@
 .rem1p5	style.css	/^.rem1p5 {$/;"	c
 >	style.css	/^  <meta charset="utf-8" \/>$/;"	s
 >	style.css	/^  \/>$/;"	s
+BankAccount	main.js	/^class BankAccount {$/;"	c
 Page 1	index.html	/^    <title>Page 1<\/title>$/;"	j
 Page 1	index.html	/^  <title>Page 1<\/title>$/;"	j
 Page 1	page2.html	/^  <title>Page 1<\/title>$/;"	j
+Please Enter The Withdrawal Amount	index.html	/^            <h2 class="pb-3">Please Enter The Withdrawal Amount<\/h2>$/;"	i
+Please Enter The Withdrawal Amount	index.html	/^      <h2 class="pb-3">Please Enter The Withdrawal Amount<\/h2>$/;"	i
+Please Enter The Withdrawal Amount	page2.html	/^      <h2 class="pb-3">Please Enter The Withdrawal Amount<\/h2>$/;"	i
+Please type your information below	index.html	/^            <h2 class="pb-3">Please type your information below<\/h2>$/;"	i
+Please type your information below	index.html	/^      <h2 class="pb-3">Please type your information below<\/h2>$/;"	i
+The money you are going to take is ...	index.html	/^                <h2 class="pb-1">The money you are going to take is ... <\/h2>$/;"	i
+The money you are going to take is ...	page2.html	/^        <h2 class="pb-1">The money you are going to take is ...<\/h2>$/;"	i
+annualInterestRate	main.js	/^  annualInterestRate = 0.08;$/;"	M	class:BankAccount
+anonymousFunctionb43910f50100	main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^  .addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50100	main.js	/^withdrawBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^    billInputs[i].addEventListener("change", function (event) {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^  .addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50200	main.js	/^depositBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50300	main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50300	main.js	/^  .addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50300	main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50300	main.js	/^comeBackLaterBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50400	main.js	/^    billInput.addEventListener("change", function () {$/;"	f
+anonymousFunctionb43910f50400	main.js	/^    billInput.addEventListener("change", function () {});$/;"	f
+anonymousFunctionb43910f50400	main.js	/^    billInputs[i].addEventListener("change", function () {$/;"	f
+anonymousFunctionb43910f50400	main.js	/^    billInputs[i].addEventListener("change", function (event) {$/;"	f
+anonymousFunctionb43910f50400	main.js	/^    confirmBackBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50400	main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50400	main.js	/^  billInputs[0].addEventListener("change", function () {$/;"	f
+anonymousFunctionb43910f50500	main.js	/^    billInputs[i].addEventListener("change", function () {$/;"	f
+anonymousFunctionb43910f50500	main.js	/^    billInputs[i].addEventListener("change", function (event) {$/;"	f
+anonymousFunctionb43910f50500	main.js	/^    confirmNextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50600	main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50700	main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50700	main.js	/^    confirmBackBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50800	main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50800	main.js	/^    confirmNextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50900	main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50900	main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50a00	main.js	/^    billInputs[i].addEventListener("change", function (event) {$/;"	f
+anonymousFunctionb43910f50a00	main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50b00	main.js	/^    billInputs[i].addEventListener("change", function (event) {$/;"	f
+anonymousFunctionb43910f50b00	main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50c00	main.js	/^    confirmBackBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50c00	main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50d00	main.js	/^    confirmNextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50e00	main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionb43910f50f00	main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+backNextBtn	main.js	/^function backNextBtn(back, next) {$/;"	f
+backNextBtn	main.js	/^function backNextBtn(backString, nextString) {$/;"	f
+bank-form	index.html	/^            <form id="bank-form" class="form" onsubmit="initializeUserAccount(); event.preventDe/;"	I
+bank-form	index.html	/^        id="bank-form"$/;"	I
+bankPage	index.html	/^        <div id="bankPage" class="bg-green col-12 text-center text-white">$/;"	I
+bankPage	index.html	/^    <div id="bankPage" class="bg-green col-12 text-center text-white"><\/div>$/;"	I
+bankPage	main.js	/^  bankPage: document.getElementById("bankPage"),$/;"	p	variable:config
+bankPageHtml	main.js	/^let bankPageHtml = `$/;"	v
+bankReturn	main.js	/^function bankReturn(bankAccount) {$/;"	f
+billDialog	main.js	/^function billDialog(billInputs) {$/;"	f
+billDialog	main.js	/^function billDialog(billInputs, multiplierAttribute) {$/;"	f
+billDialog	main.js	/^function billDialog(title, inputElementNodeList, multiplierAttribute) {$/;"	f
+billInputSelector	main.js	/^function billInputSelector(title) {$/;"	f
+billSummation	main.js	/^function billSummation(inputElementNodeList, multiplierAttribute) {$/;"	f
 body	style.css	/^body {$/;"	s
+calculateWithdrawAmount	main.js	/^  calculateWithdrawAmount(amount) {$/;"	m	class:BankAccount
+comeBackLaterBtn	main.js	/^let comeBackLaterBtn = document.getElementById("comeBackLaterBtn");$/;"	v
+comeBackLaterBtn	main.js	/^let comeBackLaterBtn = document.querySelector("#comeBackLaterBtn");$/;"	v
+comeBackLaterPage	main.js	/^function comeBackLaterPage(bankAccount) {$/;"	f
+config	main.js	/^const config = {$/;"	v
+config	main.js	/^const config = {};$/;"	C
+constructor	main.js	/^  constructor(firstName, lastName, email, type, accountNumber, money) {$/;"	m	class:BankAccount
+constructor	main.js	/^  constructor(firstName, lastName, email, type, money) {$/;"	m	class:BankAccount
 content	style.css	/^    content="width=device-width, initial-scale=1, shrink-to-fit=no"$/;"	s
 crossorigin	style.css	/^    crossorigin="anonymous"$/;"	s
+deposit	main.js	/^  deposit(amount) {$/;"	m	class:BankAccount
+depositBtn	index.html	/^          <div id="depositBtn" class="bg-blue hover p-3">$/;"	I
+depositBtn	main.js	/^let depositBtn = document.getElementById("depositBtn");$/;"	v
+depositBtn	main.js	/^let depositBtn = document.querySelector("#depositBtn");$/;"	v
+depositBtn	page2.html	/^          <div id="depositBtn" class="bg-blue hover p-3">$/;"	I
+depositPage	main.js	/^function depositPage(bankAccount) {$/;"	f
+displayBlock	main.js	/^function displayBlock(ele) {$/;"	f
+displayNone	main.js	/^function displayNone(ele) {$/;"	f
+elisa	main.js	/^let elisa = new BankAccount($/;"	v
+emailHelp	index.html	/^          <small id="emailHelp" class="form-text text-muted"$/;"	I
+emailHelp	index.html	/^    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone /;"	I
+exampleCheck1	index.html	/^          <input type="checkbox" class="form-check-input" id="exampleCheck1" \/>$/;"	I
+exampleCheck1	index.html	/^    <input type="checkbox" class="form-check-input" id="exampleCheck1">$/;"	I
 exampleInputEmail1	index.html	/^                    <input type="email" class="form-control" id="exampleInputEmail1" aria-descri/;"	I
 exampleInputEmail1	index.html	/^            id="exampleInputEmail1"$/;"	I
+exampleInputEmail1	index.html	/^    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp/;"	I
 exampleInputEmail1	page2.html	/^            id="exampleInputEmail1"$/;"	I
+exampleInputPassword1	index.html	/^            id="exampleInputPassword1"$/;"	I
+exampleInputPassword1	index.html	/^    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password/;"	I
+getFullName	main.js	/^  getFullName() {$/;"	m	class:BankAccount
+getFullName	main.js	/^function getFullName() {}$/;"	f
+getRandomInteger	main.js	/^function getRandomInteger(min, max) {$/;"	f
 head>	style.css	/^<\/head>$/;"	s
 head>	style.css	/^<head>$/;"	s
 href	style.css	/^    href="https:\/\/stackpath.bootstrapcdn.com\/bootstrap\/4.4.1\/css\/bootstrap.min.css"$/;"	s
+initial-form	index.html	/^        <div id="initial-form" class="bg-white col-12 text-center p-4">$/;"	I
+initial-form	index.html	/^    <div class="bg-white col-8 text-center" id="initial-form">$/;"	I
+initial-form	index.html	/^    <div id="initial-form" class="bg-white col-12 text-center p-4">$/;"	I
+initialForm	main.js	/^  initialForm: document.getElementById("initial-form"),$/;"	p	variable:config
+initializeUserAccount	main.js	/^function initializeUserAccount() {$/;"	f
 integrity	style.css	/^    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T\/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"$/;"	s
 link href	style.css	/^    href="https:\/\/use.fontawesome.com\/releases\/v5.13.0\/css\/all.css"$/;"	s
 link rel	style.css	/^    rel="stylesheet"$/;"	s
+mainBankPage	main.js	/^function mainBankPage(bankAccount) {$/;"	f
+mainBankPage	main.js	/^function mainBankPage(userAccount) {$/;"	f
+maxWithdrawPercent	main.js	/^  maxWithdrawPercent = 0.2;$/;"	M	class:BankAccount
 meta charset	style.css	/^  <meta charset="utf-8" \/>$/;"	s
 meta name	style.css	/^    name="viewport"$/;"	s
+moneyWithdraw1	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
+moneyWithdraw1	index.html	/^            id="moneyWithdraw1"$/;"	I
+moneyWithdraw1	page2.html	/^            id="moneyWithdraw1"$/;"	I
+moneyWithdraw10	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
+moneyWithdraw10	index.html	/^            id="moneyWithdraw10"$/;"	I
+moneyWithdraw10	page2.html	/^            id="moneyWithdraw10"$/;"	I
+moneyWithdraw100	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
+moneyWithdraw100	index.html	/^            id="moneyWithdraw100"$/;"	I
+moneyWithdraw100	page2.html	/^            id="moneyWithdraw100"$/;"	I
+moneyWithdraw20	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
+moneyWithdraw20	index.html	/^            id="moneyWithdraw20"$/;"	I
+moneyWithdraw20	page2.html	/^            id="moneyWithdraw20"$/;"	I
+moneyWithdraw5	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
+moneyWithdraw5	index.html	/^            id="moneyWithdraw5"$/;"	I
+moneyWithdraw5	page2.html	/^            id="moneyWithdraw5"$/;"	I
+moneyWithdraw50	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
+moneyWithdraw50	index.html	/^            id="moneyWithdraw50"$/;"	I
+moneyWithdraw50	page2.html	/^            id="moneyWithdraw50"$/;"	I
 p	style.css	/^p {$/;"	s
+pleae enter the withdrawal amount	index.html	/^      <h2 class="pb-3">pleae enter the withdrawal amount<\/h2>$/;"	i
+please enter the deposit amount	index.html	/^      <h2 class="py-3">please enter the deposit amount<\/h2>$/;"	i
+please enter the deposit amount	index.html	/^      <h2>please enter the deposit amount <\/h2>$/;"	i
+please enter the deposit amount	index.html	/^      <h2>please enter the deposit amount<\/h2>$/;"	i
+please enter the deposit amount	page2.html	/^      <h2 class="py-3">please enter the deposit amount<\/h2>$/;"	i
 please type your information below	index.html	/^      <h1>please type your information below<\/h1>$/;"	h
 please type your information below	index.html	/^      <h2 class="text-center">please type your information below<\/h2>$/;"	i
 please type your information below	index.html	/^      <h2>please type your information below<\/h2>$/;"	i
 please type your information below	page2.html	/^      <h2 class="text-center">please type your information below<\/h2>$/;"	i
 rel	style.css	/^    rel="stylesheet"$/;"	s
+sideBankSwitch	main.js	/^function sideBankSwitch() {$/;"	f
+sideBankSwitch	main.js	/^function sideBankSwitch(bankAccount) {$/;"	f
+sidePage	index.html	/^        <div id="sidePage" class="bg-white col-12 text-center">$/;"	I
+sidePage	index.html	/^    <div id="sidePage" class="bg-white col-12 text-center"><\/div>$/;"	I
+sidePage	index.html	/^ <div id="sidePage" class="bg-white col-12 text-center">$/;"	I
+sidePage	main.js	/^  sidePage: document.getElementById("sidePage"),$/;"	p	variable:config
+simulateTimePassage	main.js	/^  simulateTimePassage(days) {$/;"	m	class:BankAccount
 title>	style.css	/^  <title>Page 1<\/title>$/;"	s
 title>Page 1	style.css	/^  <title>Page 1<\/title>$/;"	s
+userAccountType1	index.html	/^                        <input class="form-check-input" type="radio" name="userAccountType" id="/;"	I
+userAccountType1	index.html	/^              id="userAccountType1"$/;"	I
+userAccountType2	index.html	/^                        <input class="form-check-input" type="radio" name="userAccountType" id="/;"	I
+userAccountType2	index.html	/^              id="userAccountType2"$/;"	I
+withdraw	main.js	/^  withdraw(amount) {$/;"	m	class:BankAccount
+withdrawBtn	index.html	/^          <div id="withdrawBtn" class="bg-blue hover p-3">$/;"	I
 withdrawBtn	index.html	/^          <div id="withdrawBtn" class="bg-blue hover">$/;"	I
 withdrawBtn	index.html	/^        <div id="withdrawBtn" class="bg-blue hover">$/;"	I
 withdrawBtn	index.html	/^      <div id="withdrawBtn" class=" bg-blue hover">$/;"	I
 withdrawBtn	index.html	/^      <div id="withdrawBtn" class="bg-blue hover">$/;"	I
 withdrawBtn	index.html	/^      <div id="withdrawBtn" class="d-flex bg-blue hover">$/;"	I
+withdrawBtn	main.js	/^let withdrawBtn = document.getElementById("withdrawBtn");$/;"	v
+withdrawBtn	main.js	/^let withdrawBtn = document.querySelector("#withdrawBtn");$/;"	v
+withdrawBtn	page2.html	/^          <div id="withdrawBtn" class="bg-blue hover p-3">$/;"	I
+withdrawContainer	main.js	/^function withdrawContainer() {$/;"	f
+withdrawController	main.js	/^function withdrawController() {$/;"	f
+withdrawController	main.js	/^function withdrawController(bankAccount) {$/;"	f
+withdrawGoBack	index.html	/^                    <button id="withdrawGoBack" class="btn btn-outline-primary col-12">Go Back<\//;"	I
+withdrawGoBack	index.html	/^          <button id="withdrawGoBack" class="btn btn-outline-primary col-12">$/;"	I
+withdrawGoBack	page2.html	/^          <button id="withdrawGoBack" class="btn btn-outline-primary col-12">$/;"	I
+withdrawPage	main.js	/^function withdrawPage() {$/;"	f
+withdrawPage	main.js	/^function withdrawPage(bankAccount) {$/;"	f
+withdrawPage	main.js	/^function withdrawPage(params) {$/;"	f
+withdrawProcess	index.html	/^                    <button id="withdrawProcess" class="btn btn-primary col-12">Next<\/button>$/;"	I
+withdrawProcess	index.html	/^          <button id="withdrawProcess" class="btn btn-primary col-12">$/;"	I
+withdrawProcess	page2.html	/^          <button id="withdrawProcess" class="btn btn-primary col-12">$/;"	I
+withdrawTotal	index.html	/^                <p id="withdrawTotal">$0.00<\/p>$/;"	I
+withdrawTotal	index.html	/^        <p id="withdrawTotal">$0.00<\/p>$/;"	I
+withdrawTotal	page2.html	/^        <p id="withdrawTotal">$0.00<\/p>$/;"	I
