@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Users/yukiakiba/dev/recursionCS/virtualBankingApp/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/096dc1c1/
+--	style.css	/^  <!-- メタタグ -->$/;"	s
+--	style.css	/^<!-- ここから記述してください。 -->$/;"	s
+-- Bootstrap CSS -->	style.css	/^  <!-- Bootstrap CSS -->$/;"	s
+-- fontawesome -->	style.css	/^  <!-- fontawesome -->$/;"	s
+-->	style.css	/^  <!-- メタタグ -->$/;"	s
+-->	style.css	/^<!-- ここから記述してください。 -->$/;"	s
+.bg-blue	style.css	/^.bg-blue {$/;"	c
+.bg-green	style.css	/^.bg-green {$/;"	c
+.calculation-box	style.css	/^.calculation-box {$/;"	c
+.hover	style.css	/^.hover {$/;"	c
+.hover:hover	style.css	/^.hover:hover {$/;"	c
+.money-box	style.css	/^.money-box {$/;"	c
+.rem1p3	style.css	/^.rem1p3 {$/;"	c
+.rem1p5	style.css	/^.rem1p5 {$/;"	c
+>	style.css	/^  <meta charset="utf-8" \/>$/;"	s
+>	style.css	/^  \/>$/;"	s
+Page 1	index.html	/^    <title>Page 1<\/title>$/;"	j
+Page 1	index.html	/^  <title>Page 1<\/title>$/;"	j
+Page 1	page2.html	/^  <title>Page 1<\/title>$/;"	j
+body	style.css	/^body {$/;"	s
+content	style.css	/^    content="width=device-width, initial-scale=1, shrink-to-fit=no"$/;"	s
+crossorigin	style.css	/^    crossorigin="anonymous"$/;"	s
+exampleInputEmail1	index.html	/^                    <input type="email" class="form-control" id="exampleInputEmail1" aria-descri/;"	I
+exampleInputEmail1	index.html	/^            id="exampleInputEmail1"$/;"	I
+exampleInputEmail1	page2.html	/^            id="exampleInputEmail1"$/;"	I
+head>	style.css	/^<\/head>$/;"	s
+head>	style.css	/^<head>$/;"	s
+href	style.css	/^    href="https:\/\/stackpath.bootstrapcdn.com\/bootstrap\/4.4.1\/css\/bootstrap.min.css"$/;"	s
+integrity	style.css	/^    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T\/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"$/;"	s
+link href	style.css	/^    href="https:\/\/use.fontawesome.com\/releases\/v5.13.0\/css\/all.css"$/;"	s
+link rel	style.css	/^    rel="stylesheet"$/;"	s
+meta charset	style.css	/^  <meta charset="utf-8" \/>$/;"	s
+meta name	style.css	/^    name="viewport"$/;"	s
+p	style.css	/^p {$/;"	s
+please type your information below	index.html	/^      <h1>please type your information below<\/h1>$/;"	h
+please type your information below	index.html	/^      <h2 class="text-center">please type your information below<\/h2>$/;"	i
+please type your information below	index.html	/^      <h2>please type your information below<\/h2>$/;"	i
+please type your information below	page2.html	/^      <h2 class="text-center">please type your information below<\/h2>$/;"	i
+rel	style.css	/^    rel="stylesheet"$/;"	s
+title>	style.css	/^  <title>Page 1<\/title>$/;"	s
+title>Page 1	style.css	/^  <title>Page 1<\/title>$/;"	s
+withdrawBtn	index.html	/^          <div id="withdrawBtn" class="bg-blue hover">$/;"	I
+withdrawBtn	index.html	/^        <div id="withdrawBtn" class="bg-blue hover">$/;"	I
+withdrawBtn	index.html	/^      <div id="withdrawBtn" class=" bg-blue hover">$/;"	I
+withdrawBtn	index.html	/^      <div id="withdrawBtn" class="bg-blue hover">$/;"	I
+withdrawBtn	index.html	/^      <div id="withdrawBtn" class="d-flex bg-blue hover">$/;"	I
