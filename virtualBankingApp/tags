@@ -9,33 +9,66 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/096dc1c1/
+**Screenshot**	readme.md	/^## **Screenshot**$/;"	s	chapter:Clicker-Empire-Game
+**URL**	readme.md	/^## **URL**$/;"	s	chapter:Clicker-Empire-Game
+**how to play this game**	readme.md	/^## **how to play this game**$/;"	s	chapter:Clicker-Empire-Game
+**概要**	readme.md	/^## **概要**$/;"	s	chapter:Clicker-Empire-Game
+**遊び方**	readme.md	/^## **遊び方**$/;"	s	chapter:Clicker-Empire-Game
 --	style.css	/^  <!-- メタタグ -->$/;"	s
 --	style.css	/^<!-- ここから記述してください。 -->$/;"	s
 -- Bootstrap CSS -->	style.css	/^  <!-- Bootstrap CSS -->$/;"	s
 -- fontawesome -->	style.css	/^  <!-- fontawesome -->$/;"	s
 -->	style.css	/^  <!-- メタタグ -->$/;"	s
 -->	style.css	/^<!-- ここから記述してください。 -->$/;"	s
+.bg-black	clickerEmpireGame/style.css	/^.bg-black {$/;"	c
+.bg-blue	bankApp/style.css	/^.bg-blue {$/;"	c
 .bg-blue	style.css	/^.bg-blue {$/;"	c
+.bg-gray	clickerEmpireGame/style.css	/^.bg-gray {$/;"	c
+.bg-green	bankApp/style.css	/^.bg-green {$/;"	c
 .bg-green	style.css	/^.bg-green {$/;"	c
+.bg-lightblue	clickerEmpireGame/style.css	/^.bg-lightblue {$/;"	c
+.bg-lightgreen	clickerEmpireGame/style.css	/^.bg-lightgreen {$/;"	c
+.calculation-box	bankApp/style.css	/^.calculation-box {$/;"	c
 .calculation-box	style.css	/^.calculation-box {$/;"	c
+.charactor	clickerEmpireGame/style.css	/^.charactor {$/;"	c
+.charactor-image	clickerEmpireGame/style.css	/^.charactor-image {$/;"	c
+.charactors	clickerEmpireGame/style.css	/^.charactors {$/;"	c
+.font13	clickerEmpireGame/style.css	/^.font13 {$/;"	c
+.hover	bankApp/style.css	/^.hover {$/;"	c
 .hover	style.css	/^.hover {$/;"	c
+.hover:hover	bankApp/style.css	/^.hover:hover {$/;"	c
 .hover:hover	style.css	/^.hover:hover {$/;"	c
+.money-box	bankApp/style.css	/^.money-box {$/;"	c
 .money-box	style.css	/^.money-box {$/;"	c
+.rem1p3	bankApp/style.css	/^.rem1p3 {$/;"	c
 .rem1p3	style.css	/^.rem1p3 {$/;"	c
+.rem1p5	bankApp/style.css	/^.rem1p5 {$/;"	c
 .rem1p5	style.css	/^.rem1p5 {$/;"	c
+.treasure_box	clickerEmpireGame/style.css	/^.treasure_box {$/;"	c
 >	style.css	/^  <meta charset="utf-8" \/>$/;"	s
 >	style.css	/^  \/>$/;"	s
+BankAccount	bankApp/main.js	/^class BankAccount {$/;"	c
 BankAccount	main.js	/^class BankAccount {$/;"	c
+Charactor	clickerEmpireGame/charactor.js	/^export class Charactor {$/;"	c
+Clicker-Empire-Game	readme.md	/^# Clicker-Empire-Game$/;"	c
 Page 1	index.html	/^    <title>Page 1<\/title>$/;"	j
 Page 1	index.html	/^  <title>Page 1<\/title>$/;"	j
 Page 1	page2.html	/^  <title>Page 1<\/title>$/;"	j
+Please Enter The Withdrawal Amount	bankApp/page2.html	/^      <h2 class="pb-3">Please Enter The Withdrawal Amount<\/h2>$/;"	i
 Please Enter The Withdrawal Amount	index.html	/^            <h2 class="pb-3">Please Enter The Withdrawal Amount<\/h2>$/;"	i
 Please Enter The Withdrawal Amount	index.html	/^      <h2 class="pb-3">Please Enter The Withdrawal Amount<\/h2>$/;"	i
 Please Enter The Withdrawal Amount	page2.html	/^      <h2 class="pb-3">Please Enter The Withdrawal Amount<\/h2>$/;"	i
+Please type your information below	bankApp/index.html	/^      <h2 class="pb-3">Please type your information below<\/h2>$/;"	i
 Please type your information below	index.html	/^            <h2 class="pb-3">Please type your information below<\/h2>$/;"	i
 Please type your information below	index.html	/^      <h2 class="pb-3">Please type your information below<\/h2>$/;"	i
+The money you are going to take is ...	bankApp/page2.html	/^        <h2 class="pb-1">The money you are going to take is ...<\/h2>$/;"	i
 The money you are going to take is ...	index.html	/^                <h2 class="pb-1">The money you are going to take is ... <\/h2>$/;"	i
 The money you are going to take is ...	page2.html	/^        <h2 class="pb-1">The money you are going to take is ...<\/h2>$/;"	i
+User	clickerEmpireGame/User.js	/^export class User {$/;"	c
+View	clickerEmpireGame/view.js	/^export class View {$/;"	c
+addSaveBtnFunc	clickerEmpireGame/view.js	/^  static addSaveBtnFunc(user) {$/;"	m	class:View
+addSignOutBtnFunc	clickerEmpireGame/view.js	/^  static addSignOutBtnFunc(user) {$/;"	m	class:View
+annualInterestRate	bankApp/main.js	/^  annualInterestRate = 0.08;$/;"	M	class:BankAccount
 annualInterestRate	main.js	/^  annualInterestRate = 0.08;$/;"	M	class:BankAccount
 anonymousFunctionb43910f50100	main.js	/^    .addEventListener("click", function () {$/;"	f
 anonymousFunctionb43910f50100	main.js	/^  .addEventListener("click", function () {$/;"	f
@@ -75,112 +108,206 @@ anonymousFunctionb43910f50c00	main.js	/^  nextBtn.addEventListener("click", func
 anonymousFunctionb43910f50d00	main.js	/^    confirmNextBtn.addEventListener("click", function () {$/;"	f
 anonymousFunctionb43910f50e00	main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
 anonymousFunctionb43910f50f00	main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810100	bankApp/main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810200	bankApp/main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810300	bankApp/main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810400	bankApp/main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810500	bankApp/main.js	/^    billInputs[i].addEventListener("change", function (event) {$/;"	f
+anonymousFunctionc68ba6810600	bankApp/main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810700	bankApp/main.js	/^    confirmBackBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810800	bankApp/main.js	/^    confirmNextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810900	bankApp/main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810a00	bankApp/main.js	/^    billInputs[i].addEventListener("change", function (event) {$/;"	f
+anonymousFunctionc68ba6810b00	bankApp/main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810c00	bankApp/main.js	/^    confirmBackBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810d00	bankApp/main.js	/^    confirmNextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810e00	bankApp/main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810f00	bankApp/main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+backNextBtn	bankApp/main.js	/^function backNextBtn(backString, nextString) {$/;"	f
 backNextBtn	main.js	/^function backNextBtn(back, next) {$/;"	f
 backNextBtn	main.js	/^function backNextBtn(backString, nextString) {$/;"	f
+bank-form	bankApp/index.html	/^        id="bank-form"$/;"	I
 bank-form	index.html	/^            <form id="bank-form" class="form" onsubmit="initializeUserAccount(); event.preventDe/;"	I
 bank-form	index.html	/^        id="bank-form"$/;"	I
+bankPage	bankApp/index.html	/^    <div id="bankPage" class="bg-green col-12 text-center text-white"><\/div>$/;"	I
+bankPage	bankApp/main.js	/^  bankPage: document.getElementById("bankPage"),$/;"	p	variable:config
 bankPage	index.html	/^        <div id="bankPage" class="bg-green col-12 text-center text-white">$/;"	I
 bankPage	index.html	/^    <div id="bankPage" class="bg-green col-12 text-center text-white"><\/div>$/;"	I
 bankPage	main.js	/^  bankPage: document.getElementById("bankPage"),$/;"	p	variable:config
 bankPageHtml	main.js	/^let bankPageHtml = `$/;"	v
+bankReturn	bankApp/main.js	/^function bankReturn(bankAccount) {$/;"	f
 bankReturn	main.js	/^function bankReturn(bankAccount) {$/;"	f
+billDialog	bankApp/main.js	/^function billDialog(title, inputElementNodeList, multiplierAttribute) {$/;"	f
 billDialog	main.js	/^function billDialog(billInputs) {$/;"	f
 billDialog	main.js	/^function billDialog(billInputs, multiplierAttribute) {$/;"	f
 billDialog	main.js	/^function billDialog(title, inputElementNodeList, multiplierAttribute) {$/;"	f
+billInputSelector	bankApp/main.js	/^function billInputSelector(title) {$/;"	f
 billInputSelector	main.js	/^function billInputSelector(title) {$/;"	f
+billSummation	bankApp/main.js	/^function billSummation(inputElementNodeList, multiplierAttribute) {$/;"	f
 billSummation	main.js	/^function billSummation(inputElementNodeList, multiplierAttribute) {$/;"	f
+body	bankApp/style.css	/^body {$/;"	s
+body	clickerEmpireGame/style.css	/^body {$/;"	s
 body	style.css	/^body {$/;"	s
+calculateWithdrawAmount	bankApp/main.js	/^  calculateWithdrawAmount(amount) {$/;"	m	class:BankAccount
 calculateWithdrawAmount	main.js	/^  calculateWithdrawAmount(amount) {$/;"	m	class:BankAccount
+charactors	clickerEmpireGame/config.js	/^export const charactors = [$/;"	v
+charctorsInfoPage	clickerEmpireGame/config.js	/^  charctorsInfoPage: document.getElementById("charctorsInfoPage"),$/;"	p	variable:config
+charctorsInfoPage	clickerEmpireGame/index.html	/^    <div id="charctorsInfoPage"><\/div>$/;"	I
+claerUpdateUserInfoInMainPage	clickerEmpireGame/view.js	/^  static claerUpdateUserInfoInMainPage() {$/;"	m	class:View
 comeBackLaterBtn	main.js	/^let comeBackLaterBtn = document.getElementById("comeBackLaterBtn");$/;"	v
 comeBackLaterBtn	main.js	/^let comeBackLaterBtn = document.querySelector("#comeBackLaterBtn");$/;"	v
+comeBackLaterPage	bankApp/main.js	/^function comeBackLaterPage(bankAccount) {$/;"	f
 comeBackLaterPage	main.js	/^function comeBackLaterPage(bankAccount) {$/;"	f
+config	bankApp/main.js	/^const config = {$/;"	v
+config	clickerEmpireGame/config.js	/^export const config = {$/;"	v
 config	main.js	/^const config = {$/;"	v
 config	main.js	/^const config = {};$/;"	C
+constructor	bankApp/main.js	/^  constructor(firstName, lastName, email, type, accountNumber, money) {$/;"	m	class:BankAccount
+constructor	clickerEmpireGame/User.js	/^  constructor(name, password, balance, spendDays, bonusPerTime, charactors) {$/;"	m	class:User
+constructor	clickerEmpireGame/charactor.js	/^  constructor(name, bounty, interestPercentage, imgUrl, amountOfCrew) {$/;"	m	class:Charactor
 constructor	main.js	/^  constructor(firstName, lastName, email, type, accountNumber, money) {$/;"	m	class:BankAccount
 constructor	main.js	/^  constructor(firstName, lastName, email, type, money) {$/;"	m	class:BankAccount
 content	style.css	/^    content="width=device-width, initial-scale=1, shrink-to-fit=no"$/;"	s
+createBasePage	clickerEmpireGame/view.js	/^  static createBasePage(user) {$/;"	m	class:View
+createCharactorDiv	clickerEmpireGame/charactor.js	/^  createCharactorDiv() {$/;"	m	class:Charactor
+createCharctorsInfoPage	clickerEmpireGame/view.js	/^  static createCharctorsInfoPage(charactor, user) {$/;"	m	class:View
+createLoginPage	clickerEmpireGame/view.js	/^  static createLoginPage() {$/;"	m	class:View
+createMainPage	clickerEmpireGame/view.js	/^  static createMainPage(user) {$/;"	m	class:View
 crossorigin	style.css	/^    crossorigin="anonymous"$/;"	s
+deposit	bankApp/main.js	/^  deposit(amount) {$/;"	m	class:BankAccount
 deposit	main.js	/^  deposit(amount) {$/;"	m	class:BankAccount
+depositBtn	bankApp/page2.html	/^          <div id="depositBtn" class="bg-blue hover p-3">$/;"	I
 depositBtn	index.html	/^          <div id="depositBtn" class="bg-blue hover p-3">$/;"	I
 depositBtn	main.js	/^let depositBtn = document.getElementById("depositBtn");$/;"	v
 depositBtn	main.js	/^let depositBtn = document.querySelector("#depositBtn");$/;"	v
 depositBtn	page2.html	/^          <div id="depositBtn" class="bg-blue hover p-3">$/;"	I
+depositPage	bankApp/main.js	/^function depositPage(bankAccount) {$/;"	f
 depositPage	main.js	/^function depositPage(bankAccount) {$/;"	f
+displayBlock	bankApp/main.js	/^function displayBlock(ele) {$/;"	f
 displayBlock	main.js	/^function displayBlock(ele) {$/;"	f
+displayNone	bankApp/main.js	/^function displayNone(ele) {$/;"	f
 displayNone	main.js	/^function displayNone(ele) {$/;"	f
+div	clickerEmpireGame/style.css	/^div {$/;"	s
 elisa	main.js	/^let elisa = new BankAccount($/;"	v
 emailHelp	index.html	/^          <small id="emailHelp" class="form-text text-muted"$/;"	I
 emailHelp	index.html	/^    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone /;"	I
+empire game	clickerEmpireGame/index.html	/^    <title>empire game<\/title>$/;"	j
 exampleCheck1	index.html	/^          <input type="checkbox" class="form-check-input" id="exampleCheck1" \/>$/;"	I
 exampleCheck1	index.html	/^    <input type="checkbox" class="form-check-input" id="exampleCheck1">$/;"	I
+exampleInputEmail1	bankApp/page2.html	/^            id="exampleInputEmail1"$/;"	I
 exampleInputEmail1	index.html	/^                    <input type="email" class="form-control" id="exampleInputEmail1" aria-descri/;"	I
 exampleInputEmail1	index.html	/^            id="exampleInputEmail1"$/;"	I
 exampleInputEmail1	index.html	/^    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp/;"	I
 exampleInputEmail1	page2.html	/^            id="exampleInputEmail1"$/;"	I
 exampleInputPassword1	index.html	/^            id="exampleInputPassword1"$/;"	I
 exampleInputPassword1	index.html	/^    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password/;"	I
+getFullName	bankApp/main.js	/^  getFullName() {$/;"	m	class:BankAccount
 getFullName	main.js	/^  getFullName() {$/;"	m	class:BankAccount
 getFullName	main.js	/^function getFullName() {}$/;"	f
+getRandomInteger	bankApp/main.js	/^function getRandomInteger(min, max) {$/;"	f
 getRandomInteger	main.js	/^function getRandomInteger(min, max) {$/;"	f
 head>	style.css	/^<\/head>$/;"	s
 head>	style.css	/^<head>$/;"	s
+hideAllPage	clickerEmpireGame/view.js	/^  static hideAllPage() {$/;"	m	class:View
 href	style.css	/^    href="https:\/\/stackpath.bootstrapcdn.com\/bootstrap\/4.4.1\/css\/bootstrap.min.css"$/;"	s
+increaseBalanceByClick	clickerEmpireGame/User.js	/^  increaseBalanceByClick() {$/;"	m	class:User
+increaseBalancePerTime	clickerEmpireGame/User.js	/^  increaseBalancePerTime() {$/;"	m	class:User
+increaseSpendDaysPerTime	clickerEmpireGame/User.js	/^  increaseSpendDaysPerTime() {$/;"	m	class:User
+initGame	clickerEmpireGame/view.js	/^  static initGame() {$/;"	m	class:View
+initial-form	bankApp/index.html	/^    <div id="initial-form" class="bg-white col-12 text-center p-4">$/;"	I
 initial-form	index.html	/^        <div id="initial-form" class="bg-white col-12 text-center p-4">$/;"	I
 initial-form	index.html	/^    <div class="bg-white col-8 text-center" id="initial-form">$/;"	I
 initial-form	index.html	/^    <div id="initial-form" class="bg-white col-12 text-center p-4">$/;"	I
+initialForm	bankApp/main.js	/^  initialForm: document.getElementById("initial-form"),$/;"	p	variable:config
 initialForm	main.js	/^  initialForm: document.getElementById("initial-form"),$/;"	p	variable:config
+initializeUserAccount	bankApp/main.js	/^function initializeUserAccount() {$/;"	f
 initializeUserAccount	main.js	/^function initializeUserAccount() {$/;"	f
 integrity	style.css	/^    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T\/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"$/;"	s
+jsonDecoded	clickerEmpireGame/localstrage.js	/^let jsonDecoded = JSON.parse(jsonString);$/;"	v
+jsonEncoded	clickerEmpireGame/localstrage.js	/^let jsonEncoded = JSON.stringify(userJsonDecoded);$/;"	v
+jsonString	clickerEmpireGame/localstrage.js	/^const jsonString = `[{"age":4,"money":40,"time":344,"purchases":["card","pizza","burger"]}]`;$/;"	C
 link href	style.css	/^    href="https:\/\/use.fontawesome.com\/releases\/v5.13.0\/css\/all.css"$/;"	s
 link rel	style.css	/^    rel="stylesheet"$/;"	s
+loginPage	clickerEmpireGame/config.js	/^  loginPage: document.getElementById("loginPage"),$/;"	p	variable:config
+loginPage	clickerEmpireGame/index.html	/^    <div id="loginPage"><\/div>$/;"	I
+loginUser	clickerEmpireGame/view.js	/^  static loginUser() {$/;"	m	class:View
+mainBankPage	bankApp/main.js	/^function mainBankPage(bankAccount) {$/;"	f
 mainBankPage	main.js	/^function mainBankPage(bankAccount) {$/;"	f
 mainBankPage	main.js	/^function mainBankPage(userAccount) {$/;"	f
+mainPage	clickerEmpireGame/config.js	/^  mainPage: document.getElementById("mainPage"),$/;"	p	variable:config
+mainPage	clickerEmpireGame/index.html	/^    <div id="mainPage"><\/div>$/;"	I
+maxWithdrawPercent	bankApp/main.js	/^  maxWithdrawPercent = 0.2;$/;"	M	class:BankAccount
 maxWithdrawPercent	main.js	/^  maxWithdrawPercent = 0.2;$/;"	M	class:BankAccount
 meta charset	style.css	/^  <meta charset="utf-8" \/>$/;"	s
 meta name	style.css	/^    name="viewport"$/;"	s
+moneyWithdraw1	bankApp/page2.html	/^            id="moneyWithdraw1"$/;"	I
 moneyWithdraw1	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
 moneyWithdraw1	index.html	/^            id="moneyWithdraw1"$/;"	I
 moneyWithdraw1	page2.html	/^            id="moneyWithdraw1"$/;"	I
+moneyWithdraw10	bankApp/page2.html	/^            id="moneyWithdraw10"$/;"	I
 moneyWithdraw10	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
 moneyWithdraw10	index.html	/^            id="moneyWithdraw10"$/;"	I
 moneyWithdraw10	page2.html	/^            id="moneyWithdraw10"$/;"	I
+moneyWithdraw100	bankApp/page2.html	/^            id="moneyWithdraw100"$/;"	I
 moneyWithdraw100	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
 moneyWithdraw100	index.html	/^            id="moneyWithdraw100"$/;"	I
 moneyWithdraw100	page2.html	/^            id="moneyWithdraw100"$/;"	I
+moneyWithdraw20	bankApp/page2.html	/^            id="moneyWithdraw20"$/;"	I
 moneyWithdraw20	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
 moneyWithdraw20	index.html	/^            id="moneyWithdraw20"$/;"	I
 moneyWithdraw20	page2.html	/^            id="moneyWithdraw20"$/;"	I
+moneyWithdraw5	bankApp/page2.html	/^            id="moneyWithdraw5"$/;"	I
 moneyWithdraw5	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
 moneyWithdraw5	index.html	/^            id="moneyWithdraw5"$/;"	I
 moneyWithdraw5	page2.html	/^            id="moneyWithdraw5"$/;"	I
+moneyWithdraw50	bankApp/page2.html	/^            id="moneyWithdraw50"$/;"	I
 moneyWithdraw50	index.html	/^                    <input type="number" class="form-control form-control-sm text-right withdraw/;"	I
 moneyWithdraw50	index.html	/^            id="moneyWithdraw50"$/;"	I
 moneyWithdraw50	page2.html	/^            id="moneyWithdraw50"$/;"	I
+myLocalStrage	clickerEmpireGame/localstrage.js	/^let myLocalStrage = localStorage.getItem("mytext");$/;"	v
+onclick	clickerEmpireGame/localstrage.js	/^document.getElementById("sampleload").onclick = function () {$/;"	f	variable:document.getElementById
+p	bankApp/style.css	/^p {$/;"	s
 p	style.css	/^p {$/;"	s
 pleae enter the withdrawal amount	index.html	/^      <h2 class="pb-3">pleae enter the withdrawal amount<\/h2>$/;"	i
+please enter the deposit amount	bankApp/page2.html	/^      <h2 class="py-3">please enter the deposit amount<\/h2>$/;"	i
 please enter the deposit amount	index.html	/^      <h2 class="py-3">please enter the deposit amount<\/h2>$/;"	i
 please enter the deposit amount	index.html	/^      <h2>please enter the deposit amount <\/h2>$/;"	i
 please enter the deposit amount	index.html	/^      <h2>please enter the deposit amount<\/h2>$/;"	i
 please enter the deposit amount	page2.html	/^      <h2 class="py-3">please enter the deposit amount<\/h2>$/;"	i
+please type your information below	bankApp/page2.html	/^      <h2 class="text-center">please type your information below<\/h2>$/;"	i
 please type your information below	index.html	/^      <h1>please type your information below<\/h1>$/;"	h
 please type your information below	index.html	/^      <h2 class="text-center">please type your information below<\/h2>$/;"	i
 please type your information below	index.html	/^      <h2>please type your information below<\/h2>$/;"	i
 please type your information below	page2.html	/^      <h2 class="text-center">please type your information below<\/h2>$/;"	i
+registerUser	clickerEmpireGame/view.js	/^  static registerUser() {$/;"	m	class:View
 rel	style.css	/^    rel="stylesheet"$/;"	s
+sideBankSwitch	bankApp/main.js	/^function sideBankSwitch() {$/;"	f
 sideBankSwitch	main.js	/^function sideBankSwitch() {$/;"	f
 sideBankSwitch	main.js	/^function sideBankSwitch(bankAccount) {$/;"	f
+sidePage	bankApp/index.html	/^    <div id="sidePage" class="bg-white col-12 text-center"><\/div>$/;"	I
+sidePage	bankApp/main.js	/^  sidePage: document.getElementById("sidePage"),$/;"	p	variable:config
 sidePage	index.html	/^        <div id="sidePage" class="bg-white col-12 text-center">$/;"	I
 sidePage	index.html	/^    <div id="sidePage" class="bg-white col-12 text-center"><\/div>$/;"	I
 sidePage	index.html	/^ <div id="sidePage" class="bg-white col-12 text-center">$/;"	I
 sidePage	main.js	/^  sidePage: document.getElementById("sidePage"),$/;"	p	variable:config
+simulateTimePassage	bankApp/main.js	/^  simulateTimePassage(days) {$/;"	m	class:BankAccount
 simulateTimePassage	main.js	/^  simulateTimePassage(days) {$/;"	m	class:BankAccount
 title>	style.css	/^  <title>Page 1<\/title>$/;"	s
 title>Page 1	style.css	/^  <title>Page 1<\/title>$/;"	s
+updateUserInfoInMainPageHelper	clickerEmpireGame/view.js	/^  static updateUserInfoInMainPageHelper(user) {$/;"	m	class:View
+updateUserInfoInMainPageInterval	clickerEmpireGame/view.js	/^  static updateUserInfoInMainPageInterval;$/;"	M	class:View
+updateUserInfoInMainPagePerSec	clickerEmpireGame/view.js	/^  static updateUserInfoInMainPagePerSec(user) {$/;"	m	class:View
+userAccountType1	bankApp/index.html	/^              id="userAccountType1"$/;"	I
 userAccountType1	index.html	/^                        <input class="form-check-input" type="radio" name="userAccountType" id="/;"	I
 userAccountType1	index.html	/^              id="userAccountType1"$/;"	I
+userAccountType2	bankApp/index.html	/^              id="userAccountType2"$/;"	I
 userAccountType2	index.html	/^                        <input class="form-check-input" type="radio" name="userAccountType" id="/;"	I
 userAccountType2	index.html	/^              id="userAccountType2"$/;"	I
+userJsonDecoded	clickerEmpireGame/localstrage.js	/^let userJsonDecoded = JSON.parse(jsonString);$/;"	v
+userJsonString	clickerEmpireGame/localstrage.js	/^let userJsonString = prompt("Jsonを貼り付けてください。");$/;"	v
+withdraw	bankApp/main.js	/^  withdraw(amount) {$/;"	m	class:BankAccount
 withdraw	main.js	/^  withdraw(amount) {$/;"	m	class:BankAccount
+withdrawBtn	bankApp/page2.html	/^          <div id="withdrawBtn" class="bg-blue hover p-3">$/;"	I
 withdrawBtn	index.html	/^          <div id="withdrawBtn" class="bg-blue hover p-3">$/;"	I
 withdrawBtn	index.html	/^          <div id="withdrawBtn" class="bg-blue hover">$/;"	I
 withdrawBtn	index.html	/^        <div id="withdrawBtn" class="bg-blue hover">$/;"	I
@@ -193,15 +320,150 @@ withdrawBtn	page2.html	/^          <div id="withdrawBtn" class="bg-blue hover p-
 withdrawContainer	main.js	/^function withdrawContainer() {$/;"	f
 withdrawController	main.js	/^function withdrawController() {$/;"	f
 withdrawController	main.js	/^function withdrawController(bankAccount) {$/;"	f
+withdrawGoBack	bankApp/page2.html	/^          <button id="withdrawGoBack" class="btn btn-outline-primary col-12">$/;"	I
 withdrawGoBack	index.html	/^                    <button id="withdrawGoBack" class="btn btn-outline-primary col-12">Go Back<\//;"	I
 withdrawGoBack	index.html	/^          <button id="withdrawGoBack" class="btn btn-outline-primary col-12">$/;"	I
 withdrawGoBack	page2.html	/^          <button id="withdrawGoBack" class="btn btn-outline-primary col-12">$/;"	I
+withdrawPage	bankApp/main.js	/^function withdrawPage(bankAccount) {$/;"	f
 withdrawPage	main.js	/^function withdrawPage() {$/;"	f
 withdrawPage	main.js	/^function withdrawPage(bankAccount) {$/;"	f
 withdrawPage	main.js	/^function withdrawPage(params) {$/;"	f
+withdrawProcess	bankApp/page2.html	/^          <button id="withdrawProcess" class="btn btn-primary col-12">$/;"	I
 withdrawProcess	index.html	/^                    <button id="withdrawProcess" class="btn btn-primary col-12">Next<\/button>$/;"	I
 withdrawProcess	index.html	/^          <button id="withdrawProcess" class="btn btn-primary col-12">$/;"	I
 withdrawProcess	page2.html	/^          <button id="withdrawProcess" class="btn btn-primary col-12">$/;"	I
+withdrawTotal	bankApp/page2.html	/^        <p id="withdrawTotal">$0.00<\/p>$/;"	I
 withdrawTotal	index.html	/^                <p id="withdrawTotal">$0.00<\/p>$/;"	I
 withdrawTotal	index.html	/^        <p id="withdrawTotal">$0.00<\/p>$/;"	I
 withdrawTotal	page2.html	/^        <p id="withdrawTotal">$0.00<\/p>$/;"	I
+initial-form	bankApp/index.html	/^    <div id="initial-form" class="bg-white col-12 text-center p-4">$/;"	I
+Please type your information below	bankApp/index.html	/^      <h2 class="pb-3">Please type your information below<\/h2>$/;"	i
+bank-form	bankApp/index.html	/^        id="bank-form"$/;"	I
+userAccountType1	bankApp/index.html	/^              id="userAccountType1"$/;"	I
+userAccountType2	bankApp/index.html	/^              id="userAccountType2"$/;"	I
+bankPage	bankApp/index.html	/^    <div id="bankPage" class="bg-green col-12 text-center text-white"><\/div>$/;"	I
+sidePage	bankApp/index.html	/^    <div id="sidePage" class="bg-white col-12 text-center"><\/div>$/;"	I
+displayNone	bankApp/main.js	/^function displayNone(ele) {$/;"	f
+displayBlock	bankApp/main.js	/^function displayBlock(ele) {$/;"	f
+initialForm	bankApp/main.js	/^  initialForm: document.getElementById("initial-form"),$/;"	p	variable:config
+bankPage	bankApp/main.js	/^  bankPage: document.getElementById("bankPage"),$/;"	p	variable:config
+sidePage	bankApp/main.js	/^  sidePage: document.getElementById("sidePage"),$/;"	p	variable:config
+config	bankApp/main.js	/^const config = {$/;"	v
+BankAccount	bankApp/main.js	/^class BankAccount {$/;"	c
+maxWithdrawPercent	bankApp/main.js	/^  maxWithdrawPercent = 0.2;$/;"	M	class:BankAccount
+annualInterestRate	bankApp/main.js	/^  annualInterestRate = 0.08;$/;"	M	class:BankAccount
+constructor	bankApp/main.js	/^  constructor(firstName, lastName, email, type, accountNumber, money) {$/;"	m	class:BankAccount
+getFullName	bankApp/main.js	/^  getFullName() {$/;"	m	class:BankAccount
+calculateWithdrawAmount	bankApp/main.js	/^  calculateWithdrawAmount(amount) {$/;"	m	class:BankAccount
+withdraw	bankApp/main.js	/^  withdraw(amount) {$/;"	m	class:BankAccount
+deposit	bankApp/main.js	/^  deposit(amount) {$/;"	m	class:BankAccount
+simulateTimePassage	bankApp/main.js	/^  simulateTimePassage(days) {$/;"	m	class:BankAccount
+getRandomInteger	bankApp/main.js	/^function getRandomInteger(min, max) {$/;"	f
+initializeUserAccount	bankApp/main.js	/^function initializeUserAccount() {$/;"	f
+mainBankPage	bankApp/main.js	/^function mainBankPage(bankAccount) {$/;"	f
+anonymousFunctionc68ba6810100	bankApp/main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810200	bankApp/main.js	/^    .addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810300	bankApp/main.js	/^    .addEventListener("click", function () {$/;"	f
+billInputSelector	bankApp/main.js	/^function billInputSelector(title) {$/;"	f
+backNextBtn	bankApp/main.js	/^function backNextBtn(backString, nextString) {$/;"	f
+sideBankSwitch	bankApp/main.js	/^function sideBankSwitch() {$/;"	f
+bankReturn	bankApp/main.js	/^function bankReturn(bankAccount) {$/;"	f
+withdrawPage	bankApp/main.js	/^function withdrawPage(bankAccount) {$/;"	f
+anonymousFunctionc68ba6810400	bankApp/main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810500	bankApp/main.js	/^    billInputs[i].addEventListener("change", function (event) {$/;"	f
+anonymousFunctionc68ba6810600	bankApp/main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810700	bankApp/main.js	/^    confirmBackBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810800	bankApp/main.js	/^    confirmNextBtn.addEventListener("click", function () {$/;"	f
+billSummation	bankApp/main.js	/^function billSummation(inputElementNodeList, multiplierAttribute) {$/;"	f
+billDialog	bankApp/main.js	/^function billDialog(title, inputElementNodeList, multiplierAttribute) {$/;"	f
+depositPage	bankApp/main.js	/^function depositPage(bankAccount) {$/;"	f
+anonymousFunctionc68ba6810900	bankApp/main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810a00	bankApp/main.js	/^    billInputs[i].addEventListener("change", function (event) {$/;"	f
+anonymousFunctionc68ba6810b00	bankApp/main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810c00	bankApp/main.js	/^    confirmBackBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810d00	bankApp/main.js	/^    confirmNextBtn.addEventListener("click", function () {$/;"	f
+comeBackLaterPage	bankApp/main.js	/^function comeBackLaterPage(bankAccount) {$/;"	f
+anonymousFunctionc68ba6810e00	bankApp/main.js	/^  backBtn.addEventListener("click", function () {$/;"	f
+anonymousFunctionc68ba6810f00	bankApp/main.js	/^  nextBtn.addEventListener("click", function () {$/;"	f
+body	bankApp/style.css	/^body {$/;"	s
+p	bankApp/style.css	/^p {$/;"	s
+.rem1p3	bankApp/style.css	/^.rem1p3 {$/;"	c
+.rem1p5	bankApp/style.css	/^.rem1p5 {$/;"	c
+.bg-green	bankApp/style.css	/^.bg-green {$/;"	c
+.bg-blue	bankApp/style.css	/^.bg-blue {$/;"	c
+.hover	bankApp/style.css	/^.hover {$/;"	c
+.hover:hover	bankApp/style.css	/^.hover:hover {$/;"	c
+.money-box	bankApp/style.css	/^.money-box {$/;"	c
+.calculation-box	bankApp/style.css	/^.calculation-box {$/;"	c
+please type your information below	bankApp/page2.html	/^      <h2 class="text-center">please type your information below<\/h2>$/;"	i
+exampleInputEmail1	bankApp/page2.html	/^            id="exampleInputEmail1"$/;"	I
+exampleInputEmail1	bankApp/page2.html	/^            id="exampleInputEmail1"$/;"	I
+withdrawBtn	bankApp/page2.html	/^          <div id="withdrawBtn" class="bg-blue hover p-3">$/;"	I
+depositBtn	bankApp/page2.html	/^          <div id="depositBtn" class="bg-blue hover p-3">$/;"	I
+withdrawBtn	bankApp/page2.html	/^          <div id="withdrawBtn" class="bg-blue hover p-3">$/;"	I
+Please Enter The Withdrawal Amount	bankApp/page2.html	/^      <h2 class="pb-3">Please Enter The Withdrawal Amount<\/h2>$/;"	i
+moneyWithdraw100	bankApp/page2.html	/^            id="moneyWithdraw100"$/;"	I
+moneyWithdraw50	bankApp/page2.html	/^            id="moneyWithdraw50"$/;"	I
+moneyWithdraw20	bankApp/page2.html	/^            id="moneyWithdraw20"$/;"	I
+moneyWithdraw10	bankApp/page2.html	/^            id="moneyWithdraw10"$/;"	I
+moneyWithdraw5	bankApp/page2.html	/^            id="moneyWithdraw5"$/;"	I
+moneyWithdraw1	bankApp/page2.html	/^            id="moneyWithdraw1"$/;"	I
+withdrawTotal	bankApp/page2.html	/^        <p id="withdrawTotal">$0.00<\/p>$/;"	I
+withdrawGoBack	bankApp/page2.html	/^          <button id="withdrawGoBack" class="btn btn-outline-primary col-12">$/;"	I
+withdrawProcess	bankApp/page2.html	/^          <button id="withdrawProcess" class="btn btn-primary col-12">$/;"	I
+The money you are going to take is ...	bankApp/page2.html	/^        <h2 class="pb-1">The money you are going to take is ...<\/h2>$/;"	i
+please enter the deposit amount	bankApp/page2.html	/^      <h2 class="py-3">please enter the deposit amount<\/h2>$/;"	i
+please enter the deposit amount	bankApp/page2.html	/^      <h2 class="py-3">please enter the deposit amount<\/h2>$/;"	i
+jsonString	clickerEmpireGame/localstrage.js	/^const jsonString = `[{"age":4,"money":40,"time":344,"purchases":["card","pizza","burger"]}]`;$/;"	C
+jsonDecoded	clickerEmpireGame/localstrage.js	/^let jsonDecoded = JSON.parse(jsonString);$/;"	v
+userJsonString	clickerEmpireGame/localstrage.js	/^let userJsonString = prompt("Jsonを貼り付けてください。");$/;"	v
+userJsonDecoded	clickerEmpireGame/localstrage.js	/^let userJsonDecoded = JSON.parse(jsonString);$/;"	v
+jsonEncoded	clickerEmpireGame/localstrage.js	/^let jsonEncoded = JSON.stringify(userJsonDecoded);$/;"	v
+myLocalStrage	clickerEmpireGame/localstrage.js	/^let myLocalStrage = localStorage.getItem("mytext");$/;"	v
+onclick	clickerEmpireGame/localstrage.js	/^document.getElementById("sampleload").onclick = function () {$/;"	f	variable:document.getElementById
+empire game	clickerEmpireGame/index.html	/^    <title>empire game<\/title>$/;"	j
+loginPage	clickerEmpireGame/index.html	/^    <div id="loginPage"><\/div>$/;"	I
+mainPage	clickerEmpireGame/index.html	/^    <div id="mainPage"><\/div>$/;"	I
+charctorsInfoPage	clickerEmpireGame/index.html	/^    <div id="charctorsInfoPage"><\/div>$/;"	I
+Charactor	clickerEmpireGame/charactor.js	/^export class Charactor {$/;"	c
+constructor	clickerEmpireGame/charactor.js	/^  constructor(name, bounty, interestPercentage, imgUrl, amountOfCrew) {$/;"	m	class:Charactor
+createCharactorDiv	clickerEmpireGame/charactor.js	/^  createCharactorDiv() {$/;"	m	class:Charactor
+User	clickerEmpireGame/User.js	/^export class User {$/;"	c
+constructor	clickerEmpireGame/User.js	/^  constructor(name, password, balance, spendDays, bonusPerTime, charactors) {$/;"	m	class:User
+increaseBalanceByClick	clickerEmpireGame/User.js	/^  increaseBalanceByClick() {$/;"	m	class:User
+increaseBalancePerTime	clickerEmpireGame/User.js	/^  increaseBalancePerTime() {$/;"	m	class:User
+increaseSpendDaysPerTime	clickerEmpireGame/User.js	/^  increaseSpendDaysPerTime() {$/;"	m	class:User
+loginPage	clickerEmpireGame/config.js	/^  loginPage: document.getElementById("loginPage"),$/;"	p	variable:config
+mainPage	clickerEmpireGame/config.js	/^  mainPage: document.getElementById("mainPage"),$/;"	p	variable:config
+charctorsInfoPage	clickerEmpireGame/config.js	/^  charctorsInfoPage: document.getElementById("charctorsInfoPage"),$/;"	p	variable:config
+config	clickerEmpireGame/config.js	/^export const config = {$/;"	v
+charactors	clickerEmpireGame/config.js	/^export const charactors = [$/;"	v
+body	clickerEmpireGame/style.css	/^body {$/;"	s
+div	clickerEmpireGame/style.css	/^div {$/;"	s
+.bg-black	clickerEmpireGame/style.css	/^.bg-black {$/;"	c
+.bg-gray	clickerEmpireGame/style.css	/^.bg-gray {$/;"	c
+.bg-lightgreen	clickerEmpireGame/style.css	/^.bg-lightgreen {$/;"	c
+.bg-lightblue	clickerEmpireGame/style.css	/^.bg-lightblue {$/;"	c
+.charactor-image	clickerEmpireGame/style.css	/^.charactor-image {$/;"	c
+.charactors	clickerEmpireGame/style.css	/^.charactors {$/;"	c
+.charactor	clickerEmpireGame/style.css	/^.charactor {$/;"	c
+.treasure_box	clickerEmpireGame/style.css	/^.treasure_box {$/;"	c
+.font13	clickerEmpireGame/style.css	/^.font13 {$/;"	c
+View	clickerEmpireGame/view.js	/^export class View {$/;"	c
+updateUserInfoInMainPageInterval	clickerEmpireGame/view.js	/^  static updateUserInfoInMainPageInterval;$/;"	M	class:View
+addSaveBtnFunc	clickerEmpireGame/view.js	/^  static addSaveBtnFunc(user) {$/;"	m	class:View
+addSignOutBtnFunc	clickerEmpireGame/view.js	/^  static addSignOutBtnFunc(user) {$/;"	m	class:View
+updateUserInfoInMainPagePerSec	clickerEmpireGame/view.js	/^  static updateUserInfoInMainPagePerSec(user) {$/;"	m	class:View
+claerUpdateUserInfoInMainPage	clickerEmpireGame/view.js	/^  static claerUpdateUserInfoInMainPage() {$/;"	m	class:View
+createLoginPage	clickerEmpireGame/view.js	/^  static createLoginPage() {$/;"	m	class:View
+hideAllPage	clickerEmpireGame/view.js	/^  static hideAllPage() {$/;"	m	class:View
+updateUserInfoInMainPageHelper	clickerEmpireGame/view.js	/^  static updateUserInfoInMainPageHelper(user) {$/;"	m	class:View
+createBasePage	clickerEmpireGame/view.js	/^  static createBasePage(user) {$/;"	m	class:View
+createMainPage	clickerEmpireGame/view.js	/^  static createMainPage(user) {$/;"	m	class:View
+createCharctorsInfoPage	clickerEmpireGame/view.js	/^  static createCharctorsInfoPage(charactor, user) {$/;"	m	class:View
+registerUser	clickerEmpireGame/view.js	/^  static registerUser() {$/;"	m	class:View
+loginUser	clickerEmpireGame/view.js	/^  static loginUser() {$/;"	m	class:View
+initGame	clickerEmpireGame/view.js	/^  static initGame() {$/;"	m	class:View
+Clicker-Empire-Game	readme.md	/^# Clicker-Empire-Game$/;"	c
+**how to play this game**	readme.md	/^## **how to play this game**$/;"	s	chapter:Clicker-Empire-Game
+**URL**	readme.md	/^## **URL**$/;"	s	chapter:Clicker-Empire-Game
