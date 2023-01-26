@@ -1,16 +1,16 @@
-p {
-  font-family: Futura;
-  margin: 0 !important;
-  letter-spacing: 0.02em;
+.vh-75 {
+  height: 75vh;
 }
-.profile-card {
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+#paper {
+  color: white;
+  background-image: url("https://cdn.pixabay.com/photo/2017/05/10/19/29/robot-2301646_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.avatar {
-  width: 100%;
-  height: auto;
-  padding: 1em;
+#paperText {
+  font-size: 2rem;
+  letter-spacing: 5;
+  line-height: 3;
+  font-weight: bold;
 }

@@ -1,71 +1,70 @@
-class Employee {
-  constructor(firstName, lastName, job, skills, country, avatarUrl) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.job = job;
-    this.skills = skills;
-    this.country = country;
-    this.avatarUrl = avatarUrl;
-  }
-  getFullName() {
-    return this.firstName + this.lastName;
+class WallPaper {
+  constructor(text, color, picuturUrl, verticalLocation, horizontalLocation) {
+    this.text = text;
+    this.color = color;
+    this.picuturUrl = picuturUrl;
+    this.verticalLocation = verticalLocation;
+    this.horizontalLocation = horizontalLocation;
   }
 }
-function getAttributeDiv(property, value) {
-  const div = document.createElement("div");
-  div.classList.add("py-2");
-  const propertyP = document.createElement("p");
-  propertyP.innerHTML = property;
-  const valueP = document.createElement("p");
-  valueP.innerHTML = value;
-  div.append(propertyP, valueP);
-  return div;
-}
 
-function createEmployeeCard(employee) {
-  const whiteBg = document.createElement("div");
-  whiteBg.classList.add(
-    "d-flex",
-    "align-items-center",
-    "col-md-7",
-    "col-10",
-    "m-1"
-  );
-  const profileCard = document.createElement("div");
-  profileCard.classList.add("d-flex", "col-12");
-  const leftDiv = document.createElement("div");
-  leftDiv.classList.add("col-8", "py-3");
-
-  const rightDiv = document.createElement("div");
-  rightDiv.classList.add(
-    "col-4",
+function createWallPaper(paperObj) {
+  let paperContainer = document.createElement("div");
+  paperContainer.classList.add(
+    "container",
     "d-flex",
     "justify-content-center",
     "align-items-center"
   );
+  let paper = document.createElement("div");
+  paper.classList.add(
+    "vh-75",
+    "d-flex",
+    "p-5",
+    "my-5",
+    "col-8",
+    "justify-content-" + paperObj.horizontalLocation,
+    "align-items-" + paperObj.verticalLocation
+  );
+  paper.style.backgroundImage = url(paperObj.picuturUrl);
+
+  let paperText = document.createElement("div");
+  paperText.classList.add("d-flex", "col-8");
+  paperText.innerHTML = paperObj.text;
+  paperText.style.color = "#" + paperObj.color;
+  paper.append(paperText);
+  paperContainer.append(paper);
+
+  return paperContainer;
 }
-let employee1 = new Employee(
-  "Kaiden",
-  "Herman",
-  "Software Engineer",
-  "C++, C#, Java, PHP, JavaScript, Python",
-  "United States",
-  "https://pbs.twimg.com/profile_images/501759258665299968/3799Ffxy.jpeg"
+let wallPaper1 = new WallPaper(
+  "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away. - Antoine de Saint",
+  "1B4F72",
+  "https://cdn.pixabay.com/photo/2020/06/12/03/06/magnifying-glass-5288877__340.jpg",
+  "top",
+  "right"
 );
-let employee2 = new Employee(
-  "Elizabeth",
-  "Dunn",
-  "Accountant",
-  "Excel, Word, Quickbooks",
-  "England",
-  "https://randomuser.me/api/portraits/women/76.jpg"
+
+let wallPaper2 = new WallPaper(
+  "The scientist discovers a new type of material or energy and the engineer discovers a new use for it. - Gordon Lindsay Glegg",
+  "007bff",
+  "https://cdn.pixabay.com/photo/2018/02/23/04/38/laptop-3174729_1280.jpg",
+  "center",
+  "left"
 );
-let employee3 = new Employee(
-  "Duan",
-  "Moreno",
-  "Teacher",
-  "Working with children, History, Word",
-  "Argentina",
-  "https://randomuser.me/api/portraits/med/men/93.jpg"
+
+let wallPaper3 = new WallPaper(
+  "Scientists study the world as it is, engineers create the world that never has been. - Theodore von Karman",
+  "ecf0f1",
+  "https://cdn.pixabay.com/photo/2017/05/10/19/29/robot-2301646_1280.jpg",
+  "center",
+  "center"
 );
-employees = [employee1, employee2, employee3];
+
+let wallPaperList = [wallPaper1, wallPaper2, wallPaper3];
+let papers = document.querySelector("#papers");
+console.log(papers);
+for (let WallPaper of wallPaperList) {
+  papers.append(WallPaper);
+  console.log(WallPaper);
+}
