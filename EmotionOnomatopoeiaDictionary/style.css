@@ -1,0 +1,21 @@
+.bg-red {
+  background-color: red;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+.emotion {
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+
+.big-square {
+  width: 100vw;
+  height: 500px;
+}
