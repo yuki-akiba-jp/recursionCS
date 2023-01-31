@@ -6,7 +6,9 @@ export class EmotionObject {
     this.onomatopoeia = onomatopoeia;
   }
 
-  getOnomatopoeiaWords() {}
+  getOnomatopoeiaWords() {
+    return this.onomatopoeia;
+  }
 
   getHtmlContainerString() {}
 }

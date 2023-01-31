@@ -16,7 +16,7 @@ export const emotions = [
   new EmotionObject(
     "bad",
     "not such as to be hoped for or desired; unpleasant or unwelcome.",
-    "beige",
+    "lightblue",
     ["ahem", "clatter", "clunk"]
   ),
   new EmotionObject("sad", "feeling or showing sorrow; unhappy.", "grey", [
