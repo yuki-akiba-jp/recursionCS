@@ -1,0 +1,37 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+export.ahem	dictionarys.js	/^  ahem: "https:\/\/cdn.pixabay.com\/photo\/2014\/03\/13\/10\/12\/man-286476_1280.jpg",$/;"	p
+export.bark	dictionarys.js	/^  bark: "https:\/\/cdn.pixabay.com\/photo\/2013\/07\/25\/11\/59\/german-shepherd-166972_1280.jpg",$/;"	p
+export.bark	dictionarys.js	/^  bark: "the sound made by a dog",$/;"	p
+export.bawl	dictionarys.js	/^  bawl: "https:\/\/cdn.pixabay.com\/photo\/2015\/06\/26\/10\/17\/smiley-822365_960_720.jpg",$/;"	p
+export.bling	dictionarys.js	/^  bling:$/;"	p
+export.boom	dictionarys.js	/^  boom: "https:\/\/cdn.pixabay.com\/photo\/2016\/04\/12\/21\/17\/explosion-1325471_1280.jpg",$/;"	p
+export.buzz	dictionarys.js	/^  buzz: "https:\/\/cdn.pixabay.com\/photo\/2020\/02\/13\/10\/29\/bees-4845211_1280.jpg",$/;"	p
+export.caw	dictionarys.js	/^  caw: "https:\/\/cdn.pixabay.com\/photo\/2017\/02\/16\/11\/13\/bird-2071185_1280.jpg",$/;"	p
+export.chant	dictionarys.js	/^  chant:$/;"	p
+export.chatter	dictionarys.js	/^  chatter: "https:\/\/cdn.pixabay.com\/photo\/2014\/07\/25\/08\/55\/bar-401546_1280.jpg",$/;"	p
+export.clatter	dictionarys.js	/^  clatter:$/;"	p
+export.clunk	dictionarys.js	/^  clunk:$/;"	p
+export.crawl	dictionarys.js	/^  crawl: "https:\/\/cdn.pixabay.com\/photo\/2017\/11\/23\/07\/47\/baby-2972221__340.jpg",$/;"	p
+export.flick	dictionarys.js	/^  flick:$/;"	p
+export.gargle	dictionarys.js	/^  gargle:$/;"	p
+export.giggle	dictionarys.js	/^  giggle:$/;"	p
+export.grunt	dictionarys.js	/^  grunt: "https:\/\/cdn.pixabay.com\/photo\/2010\/11\/29\/nepal-419__480.jpg",$/;"	p
+export.grunt	dictionarys.js	/^  grunt: "issue a low, animal-like noise",$/;"	p
+export.hiss	dictionarys.js	/^  hiss: "https:\/\/cdn.pixabay.com\/photo\/2016\/10\/13\/23\/30\/cat-1739091_1280.jpg",$/;"	p
+export.hiss	dictionarys.js	/^  hiss: `make a sharp, elongated "s" sound`,$/;"	p
+export.honk	dictionarys.js	/^  honk: "https:\/\/cdn.pixabay.com\/photo\/2017\/02\/28\/14\/37\/geese-2105918_1280.jpg",$/;"	p
+export.oink	dictionarys.js	/^  oink: "https:\/\/cdn.pixabay.com\/photo\/2019\/03\/02\/15\/32\/pig-4030013_1280.jpg",$/;"	p
+export.roar	dictionarys.js	/^  roar: "https:\/\/cdn.pixabay.com\/photo\/2018\/04\/13\/21\/24\/lion-3317670_1280.jpg",$/;"	p
+export.roar	dictionarys.js	/^  roar: "make a loud noise, as of an animal",$/;"	p
+export.smack	dictionarys.js	/^  smack: "a blow from a flat object (as an open hand)",$/;"	p
+export.smack	dictionarys.js	/^  smack:$/;"	p
+export.waah	dictionarys.js	/^  waah: "https:\/\/cdn.pixabay.com\/photo\/2017\/01\/18\/02\/18\/emotions-1988745_1280.jpg",$/;"	p
+export.whack	dictionarys.js	/^  whack: "the act of hitting vigorously",$/;"	p
+export.whack	dictionarys.js	/^  whack:$/;"	p
+export.whine	dictionarys.js	/^  whine:$/;"	p
+export.zing	dictionarys.js	/^  zing: "https:\/\/cdn.pixabay.com\/photo\/2017\/09\/14\/16\/38\/fiber-optic-2749588_1280.jpg",$/;"	p
