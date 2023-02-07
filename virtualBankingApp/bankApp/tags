@@ -1,0 +1,21 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+backNextBtn	main.js	/^function backNextBtn(backString, nextString) {$/;"	f
+bankReturn	main.js	/^function bankReturn(bankAccount) {$/;"	f
+billDialog	main.js	/^function billDialog(title, inputElementNodeList, multiplierAttribute) {$/;"	f
+billInputSelector	main.js	/^function billInputSelector(title) {$/;"	f
+billSummation	main.js	/^function billSummation(inputElementNodeList, multiplierAttribute) {$/;"	f
+comeBackLaterPage	main.js	/^function comeBackLaterPage(bankAccount) {$/;"	f
+const.initialForm	main.js	/^  initialForm: document.getElementById("initial-form"),$/;"	p
+depositPage	main.js	/^function depositPage(bankAccount) {$/;"	f
+displayBlock	main.js	/^function displayBlock(ele) {$/;"	f
+displayNone	main.js	/^function displayNone(ele) {$/;"	f
+getRandomInteger	main.js	/^function getRandomInteger(min, max) {$/;"	f
+initializeUserAccount	main.js	/^function initializeUserAccount() {$/;"	f
+mainBankPage	main.js	/^function mainBankPage(bankAccount) {$/;"	f
+sideBankSwitch	main.js	/^function sideBankSwitch() {$/;"	f
+withdrawPage	main.js	/^function withdrawPage(bankAccount) {$/;"	f
