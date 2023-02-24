@@ -17,8 +17,8 @@ const createTopPage = () => {
     id="cardWrapper"
     class="d-flex col-md-7 col-10 align-items-center justify-content-center"
   >
-    <div id="loginCard" class="bg-white col-12 text-center">
-      <h2>Please type your information below</h2>
+    <div id="loginCard" class="bg-white col-12 text-center ">
+      <h2 class="mt-3">Please type your information below</h2>
 
       <form>
         <div id="name" class="form-row pb-3">
@@ -52,7 +52,7 @@ const createTopPage = () => {
           />
         </div>
       </form>
-      <button type="submit" class="btn btn-primary col-12">Submit</button>
+      <button type="submit" class="btn btn-primary col-12 mb-3">Submit</button>
     </div>
   </div>
   `;
@@ -104,4 +104,34 @@ const createSecondPage = () => {
     </div>
   </div>
 `;
+  return pageContainer;
 };
+
+//deposit page
+const createThirdPage = () => {
+  let pageContainer = createPageContainer();
+  const dollers = [1, 5, 10, 20, 50, 100];
+  pageContainer.innerHTML += `<div id="deposit-page" class="bg-white col-md-7 col-10 d-flex align-items-center justify-content-center">`;
+  for (let doller of dollers) {
+    pageContainer.innerHTML += `
+      <div class="form-group row mt-3 col-10">
+        <label for="${doller}$" class="col-2">$${doller}</label>
+        <div class="col-10">
+          <input
+            id="${doller}$"
+            class="form-control text-right"
+            placeholder="0"
+            type="number"
+          />
+        </div>
+      </div>
+    `;
+  }
+  pageContainer.innerHTML += `
+    </div>
+`;
+  return pageContainer;
+};
+document.getElementById("target").append(createTopPage());
+document.getElementById("target").append(createSecondPage());
+document.getElementById("target").append(createThirdPage());
