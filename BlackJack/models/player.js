@@ -1,16 +1,19 @@
 export const GAMETYPE = {
   BLACKJACK: "BLACKJACK",
 };
-const GAMESTATUS = {
+export const GAMESTATUS = {
   BETTING: "BETTING",
   DOUBLEBETTING: "DOUBLEBETTING",
   WAITING: "WAITING",
+  STAND: "STAND",
   ACTING: "ACTING",
   HITTING: "HITTING",
   BLACKJACK: "BLACKJACK",
+  WIN: "WIN",
   GAMEOVER: "GAMEOVER",
+  SURRENDER: "SURRENDER",
 };
-const USERTYPE = {
+export const PLAYERTYPE = {
   USER: "USER",
   AI: "AI",
   HOUSE: "HOUSE",
@@ -38,30 +41,41 @@ class Player {
     this.gameStatus = GAMESTATUS.BETTING;
   }
 
+  initForNewGame() {
+    this.hand = [];
+    this.bet = 0;
+    this.winAmount = 0;
+    this.gameStatus = GAMESTATUS.BETTING;
+  }
   updateChips() {
-    if (this.gameStatus == GAMESTATUS.BETTING) this.chips -= this.bet;
+    if (this.gameStatus == GAMESTATUS.WIN) this.chips += this.bet;
+    if (this.gameStatus == GAMESTATUS.GAMEOVER) this.chips -= this.bet;
   }
 
-  promptPlayer(userType) {
-    if (userType == USERTYPE.USER) {
+  setGameStatus(gameStatus) {
+    this.gameStatus = gameStatus;
+  }
+  setBet(bet) {
+    this.bet = bet;
+  }
+
+  promptPlayer(playerType) {
+    if (playerType == PLAYERTYPE.USER) {
       if (this.gameStatus == GAMESTATUS.BETTING) {
-        updateChips();
-        return new GameDecision(GAMEACTION.BET, this.updateChips());
+        return new GameDecision(GAMEACTION.BET, this.bet);
       }
       if (this.gameStatus == GAMESTATUS.DOUBLEBETTING) {
-        this.updateChips();
-        return new GameDecision(GAMEACTION.DOUBLEBET, this.bet * 2);
+        return new GameDecision(GAMEACTION.DOUBLEBET, this.bet);
       }
       return new GameDecision(this.gameStatus, this.bet);
     }
 
-    if (userType == USERTYPE.AI) {
+    if (playerType == PLAYERTYPE.AI) {
       this.gameStatus = dicideAiStatus();
       if (this.gameStatus == GAMESTATUS.BETTING) {
         if (this.chips == 0) return new GameDecision(GAMEACTION.BET, 0);
         const betChips = Math.floor(this.chips / 5);
         this.bet = betChips;
-        updateChips();
         return new GameDecision(GAMEACTION.BET, this.bet);
       }
       if (this.gameStatus == GAMESTATUS.ACTING)
@@ -73,7 +87,7 @@ class Player {
       return null;
     }
 
-    if (userType == USERTYPE.HOUSE) {
+    if (playerType == PLAYERTYPE.HOUSE) {
       if (this.gameStatus == GAMESTATUS.BETTING) {
         this.gameStatus = GAMESTATUS.WAITING;
         return new GameDecision(GAMEACTION.WAIT, 0);
@@ -100,6 +114,22 @@ class Player {
       }
     }
     return handScore;
+  }
+
+  isGameOver() {
+    if (this.getHandScore() > BlackJackFireNum) return true;
+    return false;
+  }
+
+  hit() {
+    this.drawOne();
+    if (this.isGameOver()) this.setGameStatus(GAMESTATUS.GAMEOVER);
+  }
+  doubleBet() {
+    this.bet *= 2;
+  }
+  reduceChipsAfterGameOver() {
+    this.chips -= this.bet;
   }
 }
 

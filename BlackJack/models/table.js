@@ -1,85 +1,111 @@
+import { GAMESTATUS, PLAYERTYPE } from "./player.js";
+export const GAMEPHASE = {
+  BETTING: "BETTING",
+  ACTING: "ACTING",
+  ROUNDOVER: "ROUNDOVER",
+  GAMEOVER: "GAMEOVER",
+};
 export class Table {
-  /*
-       String gameType : {"blackjack"}から選択。
-       Array betDenominations : プレイヤーが選択できるベットの単位。デフォルトは[5,20,50,100]。
-       return Table : ゲームフェーズ、デッキ、プレイヤーが初期化されたテーブル
-    */
+  //betDenominations means the amount of chips player can select to bet
   constructor(gameType, betDenominations = [5, 20, 50, 100]) {
     this.gameType = gameType;
     this.betDenominations = betDenominations;
     this.deck = new Deck(this.gameType);
     this.players = [];
-    this.house = new Player("house", "house", this.gameType);
+    this.house = new Player("house", PLAYERTYPE.HOUSE, this.gameType);
+    this.players.push(this.house);
+
     this.gamePhase = "betting";
     this.resultsLog = [];
+    this.turnCounter = 0;
   }
-  /*
-        Player player : テーブルは、Player.promptPlayer()を使用してGameDecisionを取得し、GameDecisionとgameTypeに応じてPlayerの状態を更新します。
-        return Null : このメソッドは、プレーヤの状態を更新するだけです。
-
-        EX:
-        プレイヤーが「ヒット」し、手札が21以上の場合、gameStatusを「バスト」に設定し、チップからベットを引きます。
-    */
-  evaluateMove(Player) {
-    //TODO: ここから挙動をコードしてください。
+  //table  does Player.promptPlayer() and get GameDecision
+  //according to GameDecision, table changes Player's status
+  evaluateMove(player) {
+    gameDecision = player.promptPlayer();
+    player.setGameStatus(gameDecision.action);
+    player.setBet(gameDecision.amount);
+    if (player.gameStatus == GAMESTATUS.HITTING) player.hit();
+    if (player.gameStatus == GAMESTATUS.DOUBLEBETTING) player.doubleBet();
+    if (player.gameStatus == GAMESTATUS.GAMEOVER)
+      player.reduceChipsAfterGameOver();
   }
 
-  /*
-       return String : 新しいターンが始まる直前の全プレイヤーの状態を表す文字列。
-        NOTE: このメソッドの出力は、各ラウンドの終了時にテーブルのresultsLogメンバを更新するために使用されます。
-    */
   blackjackEvaluateAndGetRoundResults() {
-    //TODO: ここから挙動をコードしてください。
+    let log = "";
+    for (let player of this.players.length) {
+      log += player.name;
+      log += player.gameStatus;
+    }
+    // this.resultsLog.push(log);
+    return log;
   }
 
-  /*
-       return null : デッキから2枚のカードを手札に加えることで、全プレイヤーの状態を更新します。
-       NOTE: プレイヤーのタイプが「ハウス」の場合は、別の処理を行う必要があります。
-    */
   blackjackAssignPlayerHands() {
-    //TODO: ここから挙動をコードしてください。
+    for (let player of this.players.length) {
+      if (player.type == PLAYERTYPE.HOUSE) {
+        player.hand.push(this.deck.drawOne());
+      } else {
+        player.hand.push(this.deck.drawOne());
+        player.hand.push(this.deck.drawOne());
+      }
+    }
   }
 
   /*
        return null : テーブル内のすべてのプレイヤーの状態を更新し、手札を空の配列に、ベットを0に設定します。
     */
-  blackjackClearPlayerHandsAndBets() {
-    //TODO: ここから挙動をコードしてください。
+  blackjackinitForNewGame() {
+    this.gameType = gameType;
+    this.deck = new Deck(this.gameType);
+    this.gamePhase = GAMEPHASE.BETTING;
+    this.resultsLog = [];
+    this.turnCounter = 0;
+    for (let player of this.players.length) player.initForNewGame();
   }
-
-  /*
-       return Player : 現在のプレイヤー
-    */
   getTurnPlayer() {
-    //TODO: ここから挙動をコードしてください。
+    let playerIndex = this.turnCounter % (this.players.length + 1);
+    return (turnPlayer = this.players[playerIndex - 1]);
   }
 
-  /*
-       Number userData : テーブルモデルの外部から渡されるデータです。 
-       return Null : このメソッドはテーブルの状態を更新するだけで、値を返しません。
-    */
-  haveTurn(userData) {
-    //TODO: ここから挙動をコードしてください。
+  haveTurn() {
+    let turnPlayer = this.getTurnPlayer();
+    if (this.gamePhase == GAMEPHASE.BETTING) {
+      if (turnPlayer.type == PLAYERTYPE.HOUSE) {
+        this.house.gameStatus = "Waiting for bets";
+      } else if (
+        turnPlayer.type == PLAYERTYPE.USER ||
+        turnPlayer.type == PLAYERTYPE.AI
+      ) {
+        this.evaluateMove(turnPlayer);
+      }
+      if (this.onLastPlayer()) this.gamePhase = GAMEPHASE.ACTING;
+
+      if (this.gamePhase == GAMEPHASE.ACTING) {
+        if (this.allActionsCompleted()) this.gamePhase = ROUNDOVER;
+        else this.evaluateMove(turnPlayer);
+      }
+      if (this.gamePhase == GAMEPHASE.ROUNDOVER) {
+        this.gamePhase = "betting";
+        this.blackjackinitForNewGame();
+      }
+      this.turnCounter++;
+    }
   }
 
-  /*
-        return Boolean : テーブルがプレイヤー配列の最初のプレイヤーにフォーカスされている場合はtrue、そうでない場合はfalseを返します。
-    */
-  onFirstPlayer() {
-    //TODO: ここから挙動をコードしてください。
-  }
-
-  /*
-        return Boolean : テーブルがプレイヤー配列の最後のプレイヤーにフォーカスされている場合はtrue、そうでない場合はfalseを返します。
-    */
   onLastPlayer() {
-    //TODO: ここから挙動をコードしてください。
+    let playerIndex = this.turnCounter % (this.players.length + 1);
+    return playerIndex == this.players.length - 1 ? true : false;
   }
 
-  /*
-        全てのプレイヤーがセット{'broken', 'bust', 'stand', 'surrender'}のgameStatusを持っていればtrueを返し、持っていなければfalseを返します。
-    */
   allPlayerActionsResolved() {
-    //TODO: ここから挙動をコードしてください。
+    const resolvedStatusList = [
+      GAMESTATUS.STAND,
+      GAMESTATUS.GAMEOVER,
+      GAMESTATUS.SURRENDER,
+    ];
+    for (let player of this.players)
+      if (resolvedStatusList.includes(player)) return true;
+    return false;
   }
 }
