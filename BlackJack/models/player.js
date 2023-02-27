@@ -1,3 +1,6 @@
+export const GAMETYPE = {
+  BLACKJACK: "BLACKJACK",
+};
 const GAMESTATUS = {
   BETTING: "BETTING",
   DOUBLEBETTING: "DOUBLEBETTING",
@@ -90,7 +93,12 @@ class Player {
       handScore += card.getRankNumber();
       if (card.isAce()) aceCount += 1;
     }
-    if (handScore > BlackJackFireNum && aceCount) handScore -= 10;
+    if (handScore > BlackJackFireNum) {
+      while (handScore <= BlackJackFireNum || !aceCount) {
+        handScore -= 10;
+        aceCount--;
+      }
+    }
     return handScore;
   }
 }

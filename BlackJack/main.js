@@ -1,5 +1,7 @@
-import { Table } from "./table.js";
-let table1 = new Table("ai", "blackjack");
+import { Table } from "./models/table.js";
+import {GAMETYPE} from "./models/player.js";
+
+let table1 = new Table(GAMETYPE.BLACKJACK);
 while (table1.gamePhase != "roundOver") {
   table1.haveTurn();
 }
