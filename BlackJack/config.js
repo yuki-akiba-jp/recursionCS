@@ -41,6 +41,7 @@ export const SUITIMGURL = {
   "?": "https://recursionist.io/img/questionMark.png",
 };
 
+export const BlackJackFireNum = 21;
 export const RANK = [
   "A",
   "2",
@@ -56,3 +57,8 @@ export const RANK = [
   "Q",
   "K",
 ];
+
+export const DIVS = {
+  gameDiv: document.getElementById("gameDiv"),
+  authDiv: document.getElementById("authDiv"),
+};

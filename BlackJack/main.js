@@ -1,10 +1,37 @@
 import { Table } from "./models/table.js";
+import { Player } from "./models/player.js";
 import { View } from "./view.js";
-import { GAMETYPE } from "./models/player.js";
-import { GAMEPHASE } from "./models/table.js";
-View.renderLoginPage();
+import { Deck } from "./models/deck.js";
+import { GAMETYPE, PLAYERTYPE } from "./config.js";
+let table = new Table(GAMETYPE.BLACKJACK);
+const deck = new Deck(GAMETYPE.BLACKJACK);
+const user = new Player("user", PLAYERTYPE.USER, GAMETYPE.BLACKJACK, 0);
+const ai1 = new Player("ai1", PLAYERTYPE.AI, GAMETYPE.BLACKJACK, 0);
+const ai2 = new Player("ai2", PLAYERTYPE.AI, GAMETYPE.BLACKJACK, 0);
+const house = new Player("house", PLAYERTYPE.HOUSE, GAMETYPE.BLACKJACK, 0);
 
-// let table1 = new Table(GAMETYPE.BLACKJACK);
+table.house = house;
+house.hand.push(deck.drawOne());
+house.hand.push(deck.drawOne());
+table.players = [ai1, user, ai2];
+
+// View.renderLoginPage();
+// View.renderActionBtn(table, player);
+// View.renderGameOver();
+View.renderTable(table);
+// View.renderBetBtn(table);
+// View.renderPlayerStatusPage(table);
+// View.appendCardToDiv(card, ele, isMask);
+// View.renderCards(table, false);
+// View.setBtnColor(betDenominations);
+// View.updateBetInfo(player);
+// View.updatePlayerInfo(table);
+// View.renderResult(table);
+// View.createNextGameBtnDiv();
+// View.renderLogResult(table);
+// View.renderAllLog(table);
+// View.renderGameOver();
+
 // while (table1.gamePhase != GAMEPHASE.ROUNDOVER) {
 //   table1.haveTurn();
 // }

@@ -1,4 +1,6 @@
 import { GAMEPHASE, PLAYERTYPE } from "../config.js";
+import { Deck } from "./deck.js";
+import { Player } from "./player.js";
 
 export class Table {
   //betDenominations means the amount of chips player can select to bet
