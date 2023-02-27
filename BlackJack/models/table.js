@@ -72,7 +72,6 @@ export class Table {
     let turnPlayer = this.getTurnPlayer();
     if (this.gamePhase == GAMEPHASE.BETTING) {
       if (turnPlayer.type == PLAYERTYPE.HOUSE) {
-        this.house.gameStatus = "Waiting for bets";
       } else if (
         turnPlayer.type == PLAYERTYPE.USER ||
         turnPlayer.type == PLAYERTYPE.AI

@@ -1,8 +1,9 @@
 import { Table } from "./models/table.js";
 import {GAMETYPE} from "./models/player.js";
+import { GAMEPHASE } from "./models/table.js";
 
 let table1 = new Table(GAMETYPE.BLACKJACK);
-while (table1.gamePhase != "roundOver") {
+while (table1.gamePhase != GAMEPHASE.ROUNDOVER) {
   table1.haveTurn();
 }
 
