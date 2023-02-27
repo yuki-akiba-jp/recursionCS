@@ -1,34 +1,11 @@
-export const GAMETYPE = {
-  BLACKJACK: "BLACKJACK",
-};
-export const GAMESTATUS = {
-  BETTING: "BETTING",
-  DOUBLEBETTING: "DOUBLEBETTING",
-  WAITING: "WAITING",
-  STAND: "STAND",
-  ACTING: "ACTING",
-  HITTING: "HITTING",
-  BLACKJACK: "BLACKJACK",
-  WIN: "WIN",
-  GAMEOVER: "GAMEOVER",
-  SURRENDER: "SURRENDER",
-};
-export const PLAYERTYPE = {
-  USER: "USER",
-  AI: "AI",
-  HOUSE: "HOUSE",
-};
-const GAMEACTION = {
-  HIT: "HIT",
-  DRAW: "DRAW",
-  STAND: "STAND",
-  BET: "BET",
-  DOUBLEBET: "DOUBLEBET",
-  WAIT: "WAIT",
-};
-const BlackJackFireNum = 21;
+import {
+  PLAYERGAMESTATUS,
+  PLAYERTYPE,
+  PLAYERACTION,
+  BlackJackFireNum,
+} from "../config.js";
 
-class Player {
+export class Player {
   //platyler.type means player is user or ai or house
   constructor(name, type, gameType, chips = 400) {
     this.name = name;
@@ -38,18 +15,18 @@ class Player {
     this.chips = chips;
     this.bet = 0;
     this.winAmount = 0;
-    this.gameStatus = GAMESTATUS.BETTING;
+    this.gameStatus = PLAYERGAMESTATUS.BETTING;
   }
 
   initForNewGame() {
     this.hand = [];
     this.bet = 0;
     this.winAmount = 0;
-    this.gameStatus = GAMESTATUS.BETTING;
+    this.gameStatus = PLAYERGAMESTATUS.BETTING;
   }
   updateChips() {
-    if (this.gameStatus == GAMESTATUS.WIN) this.chips += this.bet;
-    if (this.gameStatus == GAMESTATUS.GAMEOVER) this.chips -= this.bet;
+    if (this.gameStatus == PLAYERGAMESTATUS.WIN) this.chips += this.bet;
+    if (this.gameStatus == PLAYERGAMESTATUS.GAMEOVER) this.chips -= this.bet;
   }
 
   setGameStatus(gameStatus) {
@@ -61,40 +38,40 @@ class Player {
 
   promptPlayer(playerType) {
     if (playerType == PLAYERTYPE.USER) {
-      if (this.gameStatus == GAMESTATUS.BETTING) {
-        return new GameDecision(GAMEACTION.BET, this.bet);
+      if (this.gameStatus == PLAYERGAMESTATUS.BETTING) {
+        return new GameDecision(PLAYERACTION.BET, this.bet);
       }
-      if (this.gameStatus == GAMESTATUS.DOUBLEBETTING) {
-        return new GameDecision(GAMEACTION.DOUBLEBET, this.bet);
+      if (this.gameStatus == PLAYERGAMESTATUS.DOUBLEBETTING) {
+        return new GameDecision(PLAYERACTION.DOUBLEBET, this.bet);
       }
       return new GameDecision(this.gameStatus, this.bet);
     }
 
     if (playerType == PLAYERTYPE.AI) {
       this.gameStatus = dicideAiStatus();
-      if (this.gameStatus == GAMESTATUS.BETTING) {
-        if (this.chips == 0) return new GameDecision(GAMEACTION.BET, 0);
+      if (this.gameStatus == PLAYERGAMESTATUS.BETTING) {
+        if (this.chips == 0) return new GameDecision(PLAYERACTION.BET, 0);
         const betChips = Math.floor(this.chips / 5);
         this.bet = betChips;
-        return new GameDecision(GAMEACTION.BET, this.bet);
+        return new GameDecision(PLAYERACTION.BET, this.bet);
       }
-      if (this.gameStatus == GAMESTATUS.ACTING)
-        return new GameDecision(GAMEACTION.STAND, 0);
+      if (this.gameStatus == PLAYERGAMESTATUS.ACTING)
+        return new GameDecision(PLAYERACTION.STAND, 0);
 
-      if (this.gameStatus == GAMESTATUS.HITTING)
-        return new GameDecision(GAMEACTION.HIT, 0);
+      if (this.gameStatus == PLAYERGAMESTATUS.HITTING)
+        return new GameDecision(PLAYERACTION.HIT, 0);
 
       return null;
     }
 
     if (playerType == PLAYERTYPE.HOUSE) {
-      if (this.gameStatus == GAMESTATUS.BETTING) {
-        this.gameStatus = GAMESTATUS.WAITING;
-        return new GameDecision(GAMEACTION.WAIT, 0);
+      if (this.gameStatus == PLAYERGAMESTATUS.BETTING) {
+        this.gameStatus = PLAYERGAMESTATUS.WAITING;
+        return new GameDecision(PLAYERACTION.WAIT, 0);
       }
 
-      if (this.gameStatus == GAMESTATUS.HITTING) {
-        return new GameDecision(GAMEACTION.HIT, this.bet);
+      if (this.gameStatus == PLAYERGAMESTATUS.HITTING) {
+        return new GameDecision(PLAYERACTION.HIT, this.bet);
       }
       return null;
     }
@@ -123,7 +100,7 @@ class Player {
 
   hit() {
     this.drawOne();
-    if (this.isGameOver()) this.setGameStatus(GAMESTATUS.GAMEOVER);
+    if (this.isGameOver()) this.setGameStatus(PLAYERGAMESTATUS.GAMEOVER);
   }
   doubleBet() {
     this.bet *= 2;
@@ -134,11 +111,11 @@ class Player {
 }
 
 function dicideAiStatus() {
-  const maxIndex = GAMESTATUS.length - 1;
+  const maxIndex = PLAYERGAMESTATUS.length - 1;
   const index = Math.floor(Math.random() * maxIndex);
 
   //return status exept for WAITING
-  return GAMESTATUS[index] == GAMESTATUS.WAITING
-    ? GAMESTATUS[index - 1]
-    : GAMESTATUS[index];
+  return PLAYERGAMESTATUS[index] == PLAYERGAMESTATUS.WAITING
+    ? PLAYERGAMESTATUS[index - 1]
+    : PLAYERGAMESTATUS[index];
 }

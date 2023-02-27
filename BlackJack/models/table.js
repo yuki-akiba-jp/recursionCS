@@ -1,10 +1,5 @@
-import { GAMESTATUS, PLAYERTYPE } from "./player.js";
-export const GAMEPHASE = {
-  BETTING: "BETTING",
-  ACTING: "ACTING",
-  ROUNDOVER: "ROUNDOVER",
-  GAMEOVER: "GAMEOVER",
-};
+import { GAMEPHASE, PLAYERTYPE } from "../config.js";
+
 export class Table {
   //betDenominations means the amount of chips player can select to bet
   constructor(gameType, betDenominations = [5, 20, 50, 100]) {

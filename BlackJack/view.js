@@ -1,4 +1,4 @@
-class View {
+export class View {
   static config = {
     gamePage: document.getElementById("gameDiv"),
     loginPage: document.getElementById("loginPage"),

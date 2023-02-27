@@ -1,4 +1,4 @@
-const PictureCardsRanks = ["J", "Q", "K"];
+import { PictureCardsRanks } from "../config.js";
 export class Card {
   constructor(suit, rank) {
     this.suit = suit;
@@ -14,6 +14,7 @@ export class Card {
       return parseInt(this.rank);
     }
   }
+
   isPictureCard() {
     for (let PictureCardRank of PictureCardsRanks) {
       if (this.rank === PictureCardRank) return true;

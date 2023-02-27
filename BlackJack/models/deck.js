@@ -1,11 +1,5 @@
 import { Card } from "./card.js";
-const SUIT = ["H", "S", "C", "D"];
-
-const GAMETYPE = {
-  BlackJack: "BlackJack",
-};
-
-const RANK = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+import { SUIT, GAMETYPE, RANK } from "../config.js";
 
 export class Deck {
   constructor(gameType) {
@@ -25,7 +19,7 @@ export class Deck {
 
   resetDeck() {
     this.cards = [];
-    if (this.gameType == GAMETYPE.BlackJack) {
+    if (this.gameType == GAMETYPE.BLACKJACK) {
       for (let suit of SUIT) {
         for (let rank of RANK) {
           this.cards.push(new Card(suit, rank));
