@@ -1,243 +1,336 @@
-import { PLAYERTYPE, GAMEPHASE, PLAYERGAMESTATUS } from "./config.js";
-import { DIVS } from "./config.js";
-
+import { GAMETYPE } from "./config.js";
 export class View {
-  static renderBetBtn(table) {
-    let betsDiv = document.getElementById("betsDiv");
-
-    let betBtnDiv = document.createElement("div");
-    let colorHash = View.setBtnColor(table.betDenominations);
-    betBtnDiv.classList.add(
-      "py-2",
-      "h-60",
+  static createInitialPage() {
+    let container = document.createElement("div");
+    container.classList.add(
+      "vh-100",
       "d-flex",
-      "justify-content-between"
+      "flex-column",
+      "justify-content-center",
+      "align-items-center",
+      "bg-success",
+      "text-center"
     );
-    for (let i = 0; i < table.betDenominations.length; i++) {
-      let bet = table.betDenominations[i];
-      betBtnDiv.innerHTML += `
-            <div>
-                <div class="input-group" >
-                    <span class="input-group-btn">
-                        <button type="button" class="btn ${colorHash[bet]} rounded-circle p-0 btn-lg" style="width:3rem;height:3rem;" id="betValue" value=${bet}>${bet}</button>
-                    </span>
-                </div>
-            </div>
-            `;
-    }
-
-    let dealResetDiv = document.createElement("div");
-    dealResetDiv.classList.add("d-flex", "justify-content-between", "m-2");
-    dealResetDiv.innerHTML = `            
-        <button type="submit" class="w-30 rem5 text-center btn btn-primary" id="deal">DEAL</button>
-        <button type="button" class="w-30 rem5 text-center btn btn-primary" id="reset">RESET</button>
-        <button type="submit" class="w-30 rem5 text-center btn btn-primary" id="allIn">ALL IN</button>
+    container.innerHTML = `
+        <h1>blackjack</h1>
+        <h3>Select Game and Input Your Name!</h3>
+        <div class="col-4 mt-4">
+          <div class="radio">
+            <label>
+              <input type="radio" id="${GAMETYPE.BLACKJACK}" value="${GAMETYPE.BLACKJACK}" />
+              <span>BlackJack</span>
+            </label>
+          </div>
+          <div class="my-4">
+            <input
+              id="username"
+              type="text"
+              class="form-control"
+              placeholder="Player Name"
+              value="user"
+            />
+          </div>
+        </div>
+        <div class="col-6">
+          <p id="gameStartBtn" class="dbtn">Game Start</p>
+        </div>
         `;
-    betsDiv.append(betBtnDiv, dealResetDiv);
-
-    let select = betsDiv.querySelectorAll("#betValue");
-    let player = table.players.filter((x) => x.type == "user")[0];
-
-    for (let i = 0; i < select.length; i++) {
-      select[i].addEventListener("click", function () {
-        Controller.clickBetBtn(select[i].value, player);
-        View.updateBetInfo(table);
-        View.renderBetBtn(table);
-      });
-    }
-
-    let deal = betsDiv.querySelectorAll("#deal")[0];
-    deal.addEventListener("click", function () {
-      let minimumBet = table.getMinimumBet();
-      if (player.bet < minimumBet) alert("Minimum bet is $" + minimumBet + ".");
-      else {
-        player.chips += player.bet;
-        Controller.controlTable(table);
-      }
-    });
-
-    let reset = betsDiv.querySelectorAll("#reset")[0];
-    reset.addEventListener("click", function () {
-      player.resetPlayerBet();
-      View.updateBetInfo(table);
-      View.renderBetBtn(table);
-    });
-
-    let allIn = betsDiv.querySelectorAll("#allIn")[0];
-    allIn.addEventListener("click", function () {
-      let allBet = player.chips;
-      player.playerAllin(allBet);
-      View.updateBetInfo(table);
-      View.renderBetBtn(table);
-    });
+    return document.getElementById("root").append(container);
   }
 
-  static setBtnColor(betDenominations) {
-    //->Array
-    let hash = {};
-    let color = ["btn-danger", "btn-primary", "btn-success", "btn-dark"];
-    for (let i = 0; i < betDenominations.length; i++) {
-      let currentColor = color[i];
-      if (i >= currentColor.length) currentColor = color[i - 4];
-      if (hash[betDenominations[i]] == undefined)
-        hash[betDenominations[i]] = currentColor;
-    }
-    return hash;
-  }
+  static createMainPage(table) {
+    let container = document.createElement("div");
+    container.classList.add(
+      "vh-100",
+      "bg-success",
+      "d-flex",
+      "justify-content-center",
+      "align-items-center"
+    );
+    container.innerHTML = `
+        <div class="col-12">
+          <div class="pt-5 container">
+            <h3 class="m-0 text-center text-white rem3">Dealer</h3>
+            <p id="housestatus" class="text-center">status: ${
+              table.house.gameStatus
+            }</p>
 
-  static updateBetInfo(player) {
-    let betBtnDiv = document.getElementById("betsDiv");
-    betBtnDiv.innerHTML = "";
-    View.renderBetInfo(player);
-  }
-
-  static updateActionBetInfo(table, player) {
-    let actionsAndBetsDiv = document.getElementById("actionsAndBetsDiv");
-    actionsAndBetsDiv.innerHTML = "";
-    View.renderActionBtn(table, player);
-  }
-
-  static renderActionBtn(table, player) {
-    // let actionsAndBetsDiv = document.getElementById("actionsAndBetsDiv");
-    // actionsAndBetsDiv.innerHTML = `
-    this.config.loginPage.innerHTML = `
-        <div id ="actionsDiv" class="d-flex flex-wrap w-70 p-3 justify-content-center">
-            <div class="py-2 mx-2">
-                <a class="text-dark btn btn-light px-5 py-1" id="surrenderBtn">Surrender</a>
+            <div
+              id="${table.players[0].name}"
+              class="justify-content-center pt-3 pb-5 row"
+            >
+              <div class="col-3 justify-content-center row">
+                ${View.createCardView(table.players[0])}
+              </div>
             </div>
-            <div class="py-2 mx-2">
-                <a class="btn btn-success px-5 py-1" id="standBtn">Stand</a>
+
+            <div class="">
+              <div id="playersDiv" class="d-flex justify-content-between">
+                <div id="${table.players[2]}" class="col-3">
+                  <h3 class="m-0 text-white text-center rem3">
+                    ${table.players[2].name}
+                  </h3>
+                  <p id="player2status" class="text-center">
+                    status: ${table.players[2].status}
+                  </p>
+                  <p class="text-center">bet: ${table.players[2].betAmount}</p>
+                  <p class="text-center">chip: ${table.players[2].chips}</p>
+                  <div class="d-flex justify-content-center row">
+                    ${View.createCardView(table.players[2])}
+                  </div>
+                </div>
+
+                <div id="player1info" class="col-3">
+                  <h3 class="m-0 text-white text-center rem3">
+                    ${table.players[1].name}
+                  </h3>
+                  <p id="player1status" class="text-center">
+                    status: ${table.players[1].status}
+                  </p>
+                  <p class="text-center">bet: ${table.players[1].betAmount}</p>
+                  <p class="text-center">chip: ${table.players[1].chips}</p>
+                  <div class="d-flex justify-content-center row">
+                    ${View.createCardView(table.players[1])}
+                  </div>
+                </div>
+
+                <div id="${table.players[3]}" class="col-3">
+                  <h3 class="m-0 text-white text-center rem3">
+                    ${table.players[3].name}
+                  </h3>
+                  <p id="player3status" class="text-center">
+                    status: ${table.players[3].status}
+                  </p>
+                  <p class="text-center">bet: ${table.players[3].betAmount}</p>
+                  <p class="text-center">chip: ${table.players[3].chips}</p>
+                  <div class="d-flex justify-content-center row">
+                    ${View.createCardView(table.players[3])}
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="py-2 mx-2">
-                <a class="btn btn-warning px-5 py-1" id="hitBtn">Hit</a>
-            </div>
-            <div class="py-2 mx-2">
-                <a class="btn btn-danger px-5 py-1" id="doubleBtn">Double</a>
-            </div>            
+            <div id="playerArea" class="d-flex justify-content-center mt-5"></div>
+          </div>
         </div>
         `;
 
-    let actionList = ["surrender", "stand", "hit", "double"];
-    actionList.forEach(function (action) {
-      let actionBtn = document.getElementById(action + "Btn");
-      actionBtn.addEventListener("click", function () {
-        table.haveTurn(action);
-        Controller.controlTable(table, action);
-      });
-    });
+    return document.getElementById("root").append(container);
   }
 
-  //  static updatePlayerInfo(table) {
-  //    let houseCardsDiv = document.getElementById("houseCardsDiv");
-  //    let playersDiv = document.getElementById("playersDiv");
-  //    houseCardsDiv.innerHTML = "";
-  //    playersDiv.innerHTML = "";
-  //    View.renderHouseComponent(table);
-  //    View.renderPlayerStatusPage(table);
-  //  }
+  static createBetPhase(table) {
+    let container = document.createElement("div");
+    container.innerHTML = `
+        <div id="betamount">
+          <h4>Your Bet ${table.players[1].betAmount}</h4>
+        </div>
+        <div id="chips" class="d-flex align-items-center"></div>
+        <div class="d-grid col-12 my-4">
+          <button id="betbtn" class="btn btn-primary" disabled>ok</button>
+          <button id="resetbetbtn" class="btn btn-danger mt-2">Reset</button>
+        </div>
+        `;
 
-  //  static renderResult(table) {
-  //    let actionsAndBetsDiv = document.getElementById("actionsAndBetsDiv");
-  //    let userData = table.players.filter((user) => user.type == "user");
-  //    let gameResult = userData[0].gameResult.toUpperCase();
-  //    let splitResult = userData[0].splitResult;
-  //    let insurance = userData[0].insurance;
-  //    let div = View.createNextGameBtnDiv();
+    for (let chip of table.betDenominations) {
+      let chipBtn = document.createElement("div");
+      chipBtn.innerHTML = `
+            <button id="${chip}" type="button" class="btn btn-warning btn-circle mx-4" value=${chip}>${chip}</button>
+            </button>
+            `;
+      chipBtn.addEventListener("click", () => {
+        document.querySelectorAll(
+          "#betamount"
+        )[0].innerHTML = `<h4>Your Bet ${table.players[1].betAmount}</h4>`;
+      });
+      container.querySelectorAll("#chips")[0].append(chipBtn);
+    }
 
-  //    actionsAndBetsDiv.innerHTML = "";
-  //    if (splitResult != 0) {
-  //      for (let i = 0; i < splitResult.length; i++) {
-  //        let p = document.createElement("p");
-  //        p.classList.add("m-0", "text-white", "text-left", "rem3");
-  //        p.innerText = `Split ${i + 1}: ${splitResult[i].toUpperCase()}`;
-  //        div.append(p);
-  //      }
-  //      actionsAndBetsDiv.append(div);
-  //    } else if (table.userInsurance) {
-  //      let insuranceP = document.createElement("p");
-  //      let gameResultP = document.createElement("p");
-  //      gameResultP.classList.add("m-0", "text-white", "text-left", "rem3");
-  //      gameResultP.innerText = `${gameResult}`;
+    return document.getElementById("playerArea").append(container);
+  }
 
-  //      insuranceP.classList.add("rem1", "text-white", "text-left");
-  //      if (table.house.isBlackJack())
-  //        insuranceP.innerText = `Insurance +${insurance * 2}`;
-  //      else insuranceP.innerText = `Insurance -${insurance}`;
+  static createActionPhase(table) {
+    let container = document.createElement("div");
+    container.innerHTML = `
+        <div id="actions" class="d-flex align-items-center">
+        </div>
+        `;
+    for (let action of table.getTurnPlayer().actions) {
+      let actionBtn = document.createElement("div");
+      actionBtn.innerHTML = `
+            <button id="${action}" type="button" class="btn btn-warning btn-circle mx-4" value=${action}>${action}</button>
+            `;
+      container.querySelectorAll("#actions")[0].append(actionBtn);
+    }
 
-  //      div.append(gameResultP, insuranceP);
-  //      actionsAndBetsDiv.append(div);
-  //    } else {
-  //      let p = document.createElement("p");
-  //      p.classList.add("m-0", "text-white", "text-center", "rem3");
-  //      p.innerText = `${gameResult}`;
-  //      div.append(p);
-  //      actionsAndBetsDiv.append(div);
-  //    }
-  //    let nextGameBtn = actionsAndBetsDiv.querySelectorAll("#nextGame")[0];
-  //    nextGameBtn.addEventListener("click", function () {
-  //      table.haveTurn(table);
-  //      table.blackjackAssignPlayerHands();
-  //      Controller.controlTable(table);
-  //    });
-  //  }
+    return document.getElementById("playerArea").append(container);
+  }
 
-  //  static createNextGameBtnDiv() {
-  //    let div = document.createElement("div");
-  //    let nextGame = document.createElement("a");
-  //    div.classList.add(
-  //      "d-flex",
-  //      "flex-column",
-  //      "justify-content-center",
-  //      "align-items-center",
-  //      "col-5"
-  //    );
-  //    nextGame.classList.add("text-white", "btn", "btn-primary", "px-5", "py-1");
-  //    nextGame.id = "nextGame";
-  //    nextGame.innerText = `Next Game`;
-  //    div.append(nextGame);
-  //    return div;
-  //  }
+  static createCardView(player) {
+    let container = document.createElement("div");
+    for (let card of player.hand) {
+      container.innerHTML += `
+                <div id="${
+                  card.suit + card.rank
+                }" class="border text-center m-2 w-15 bg-white">
+                    <div>
+                    </div>
+                    <div>
+                        <p>${card.rank}</p>
+                    </div>
+                </div>
+                `;
+      if (card.suit === "H") {
+        container
+          .querySelectorAll(`#${card.suit + card.rank}`)[0]
+          .querySelectorAll("div")[0].innerHTML = `<p>♥️</p>`;
+      } else if (card.suit === "D") {
+        container
+          .querySelectorAll(`#${card.suit + card.rank}`)[0]
+          .querySelectorAll("div")[0].innerHTML = `<p>♦️</p>`;
+      } else if (card.suit === "C") {
+        container
+          .querySelectorAll(`#${card.suit + card.rank}`)[0]
+          .querySelectorAll("div")[0].innerHTML = `<p>♣️</p>`;
+      } else if (card.suit === "S") {
+        container
+          .querySelectorAll(`#${card.suit + card.rank}`)[0]
+          .querySelectorAll("div")[0].innerHTML = `<p>♠️</p>`;
+      }
+    }
 
-  //  //render log result each round
-  //  // static renderLogResult(table) {
-  //  //   let resultLogDiv = document.getElementById("resultLogDiv");
-  //  //   let div = document.createElement("div");
-  //  //   div.classList.add("text-white", "w-50");
-  //  //   div.innerHTML += `
-  //  //       <p>rounnd ${table.resultsLog.length + 1}</p>
-  //  //       `;
-  //  //   div.append(table.blackjackEvaluateAndGetRoundResults());
-  //  //   resultLogDiv.append(div);
-  //  // }
+    return container.innerHTML;
+  }
 
-  //  //render all logs when gameover
-  //  //static renderAllLog(table) {
-  //  //  let resultLogDiv = document.getElementById("resultLogDiv");
-  //  //  let div = document.createElement("div");
-  //  //  div.classList.add("text-white", "w-50");
-  //  //  for (let i = 0; i < table.resultsLog.length; i++) {
-  //  //    div.innerHTML += `
-  //  //          <p>rounnd ${i + 1}</p>
-  //  //          `;
-  //  //    div.append(table.resultsLog[i]);
-  //  //  }
-  //  //  resultLogDiv.append(div);
-  //  //}
+  static faceDownCard(table) {
+    let faceDownCard = table.house.hand[0].suit + table.house.hand[0].rank;
+    document.querySelectorAll(
+      `#${faceDownCard}`
+    )[0].innerHTML = `<i class="fa-solid fa-question fa-2x"></i>`;
+  }
 
-  //  static renderGameOver() {
-  //    DIVS.gameDiv.innerHTML = `
-  //        <div class="d-flex flex-column justify-content-center align-items-center col-5">
-  //            <p class="m-0 text-white text-center rem3">GAME OVER</p>
-  //        </div>
-  //        <div class="d-flex justify-content-around m-2 col-2">
-  //            <button type="submit" class="text-white btn btn-primary w-30 rem5" id="newGameBtn">New Game</button>
-  //        </div>
-  //        `;
-  //    // let newGameBtn = document.getElementById("newGameBtn")
-  //    // newGameBtn.addEventListener("click", function () {
-  //    //   View.displayNone(View.config.mainPage);
-  //    //   View.displayBlock(View.config.loginPage);
-  //    //   Controller.startGame();
-  //    // });
-  //  }
+  static faceUpCard(table) {
+    let faceUpCard = table.house.hand[0].suit + table.house.hand[0].rank;
+
+    document.querySelectorAll(`#${faceUpCard}`)[0].innerHTML = `
+            <div>
+                <p>${table.house.hand[0].suit}</p>
+            </div>
+            <div>
+                <p>${table.house.hand[0].rank}</p>
+            </div>
+        `;
+    if (table.house.hand[0].suit === "H") {
+      document
+        .querySelectorAll(
+          `#${table.house.hand[0].suit + table.house.hand[0].rank}`
+        )[0]
+        .querySelectorAll("div")[0].innerHTML = `<p>♥️</p>`;
+    } else if (table.house.hand[0].suit === "D") {
+      document
+        .querySelectorAll(
+          `#${table.house.hand[0].suit + table.house.hand[0].rank}`
+        )[0]
+        .querySelectorAll("div")[0].innerHTML = `<p>♦️</p>`;
+    } else if (table.house.hand[0].suit === "C") {
+      document
+        .querySelectorAll(
+          `#${table.house.hand[0].suit + table.house.hand[0].rank}`
+        )[0]
+        .querySelectorAll("div")[0].innerHTML = `<p>♣️</p>`;
+    } else if (table.house.hand[0].suit === "S") {
+      document
+        .querySelectorAll(
+          `#${table.house.hand[0].suit + table.house.hand[0].rank}`
+        )[0]
+        .querySelectorAll("div")[0].innerHTML = `<p>♠️</p>`;
+    }
+  }
+
+  static createResultModal(table) {
+    let container = document.createElement("div");
+    container.innerHTML = `
+        <div id="resultmodal" class="modal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Round ${table.roundCounter}</h5>
+              </div>
+              <div class="modal-body">
+                <p>${table.resultLog[0]}</p>
+                <p>${table.resultLog[1]}</p>
+                <p>${table.resultLog[2]}</p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  id="nextround"
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        `;
+    return document.getElementById("root").append(container);
+  }
+
+  static createGameOverModal() {
+    let container = document.createElement("div");
+    container.innerHTML = `
+        <div id="gameovermodal" class="modal" tabindex="1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5>Game Over</h5>
+              </div>
+              <div class="modal-body">
+                <p>You are Bust Out.</p>
+              </div>
+
+              <div class="modal-footer">
+                <button
+                  id="newgame"
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        `;
+    return document.getElementById("root").append(container);
+  }
+
+  static createNewGameBtn(chip) {
+    let status = chip > 0 ? "Next Round" : "New Game";
+
+    let container = document.createElement("div");
+    container.innerHTML = `
+        <button id=${status} type="button" class="btn btn-primary ">${status}</button>
+        `;
+    return document.getElementById("playerArea").append(container);
+  }
+
+  static disabledSecondActionBtn() {
+    let doubleBtn = document.getElementById("double");
+    doubleBtn.disabled = true;
+
+    let surrenderBtn = document.getElementById("surrender");
+    surrenderBtn.disabled = true;
+  }
+
+  static displayResult(player) {
+    let result = player.result;
+    let container = document.createElement("div");
+    container.classList.add("text-center");
+    container.innerHTML = `
+        <h2>${result}</h2>
+        `;
+    return document.getElementById("player1info").append(container);
+  }
 }

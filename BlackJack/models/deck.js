@@ -29,6 +29,6 @@ export class Deck {
   }
 
   drawOne() {
-    return this.cards.shift();
+    return this.cards.pop();
   }
 }

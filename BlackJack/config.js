@@ -2,14 +2,21 @@ export const GAMETYPE = {
   BLACKJACK: "BLACKJACK",
 };
 
+export const PLAYERACTION = {
+  HIT: "HIT",
+  STAND: "STAND",
+  DOUBLE: "DOUBLE",
+  SURRENDER: "SURRENDER",
+  WAIT: "WAIT",
+};
+
 export const PLAYERGAMESTATUS = {
-  BETTING: "BETTING",
-  ACTING: "ACTING",
-  WAITING: "WAITING",
-  BLACKJACK: "BLACKJACK",
+  ...PLAYERACTION,
+  BET: "BET",
+  PUSH: "PUSH",
   WIN: "WIN",
   GAMEOVER: "GAMEOVER",
-  SURRENDER: "SURRENDER",
+  BLACKJACK: "BLACKJACK",
 };
 
 export const PLAYERTYPE = {
@@ -17,17 +24,12 @@ export const PLAYERTYPE = {
   AI: "AI",
   HOUSE: "HOUSE",
 };
-export const PLAYERACTION = {
-  HIT: "HIT",
-  STAND: "STAND",
-  DOUBLEBET: "DOUBLEBET",
-  SURRENDER: "SURRENDER",
-};
 
 export const GAMEPHASE = {
   BETTING: "BETTING",
   ACTING: "ACTING",
   ROUNDOVER: "ROUNDOVER",
+  GAMEOVER: "GAMEOVER",
 };
 
 export const PictureCardsRanks = ["J", "Q", "K"];

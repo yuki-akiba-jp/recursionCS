@@ -1,107 +1,200 @@
-import { GAMEPHASE, PLAYERTYPE } from "../config.js";
+import { PLAYERGAMESTATUS } from "../config.js";
+import { GAMEPHASE, PLAYERTYPE, BlackJackFireNum } from "../config.js";
 import { Deck } from "./deck.js";
 import { Player } from "./player.js";
 
 export class Table {
   //betDenominations means the amount of chips player can select to bet
-  constructor(gameType, betDenominations = [5, 20, 50, 100]) {
+  constructor(username, gameType, betDenominations = [5, 20, 50, 100]) {
     this.gameType = gameType;
     this.betDenominations = betDenominations;
     this.deck = new Deck(this.gameType);
     this.players = [];
     this.house = new Player("house", PLAYERTYPE.HOUSE, this.gameType);
-    this.players.push(this.house);
-
-    this.gamePhase = "betting";
+    this.gamePhase = GAMEPHASE.BETTING;
     this.resultsLog = [];
     this.turnCounter = 0;
+
+    this.players.push(this.house);
+    this.players.push(new Player(username, PLAYERTYPE.USER));
+    this.players.push(new Player("AI1", PLAYERTYPE.AI));
+    this.players.push(new Player("AI2", PLAYERTYPE.AI));
   }
   //table  does Player.promptPlayer() and get GameDecision
-  //according to GameDecision, table changes Player's status
-  evaluateMove(player) {
-    gameDecision = player.promptPlayer();
-    player.setGameStatus(gameDecision.action);
-    player.setBet(gameDecision.amount);
-    if (player.gameStatus == GAMESTATUS.HITTING) player.hit();
-    if (player.gameStatus == GAMESTATUS.DOUBLEBETTING) player.doubleBet();
-    if (player.gameStatus == GAMESTATUS.GAMEOVER)
-      player.reduceChipsAfterGameOver();
+  //according to GameDecision, table changes Player's gameStatus
+  evaluateMove(gameDecision) {
+    let turnPlayer = this.getTurnPlayer();
+
+    if (turnPlayer.isBlackJack()) {
+      turnPlayer.gameStatus = PLAYERGAMESTATUS.BLACKJACK;
+      if (turnPlayer.type == PLAYERTYPE.HOUSE)
+        turnPlayer.gameStatus = PLAYERGAMESTATUS.STAND;
+    }
+    if (gameDecision.action == PLAYERGAMESTATUS.BET) {
+      turnPlayer.bet = gameDecision.amount;
+      turnPlayer.gameStatus = PLAYERGAMESTATUS.WAIT;
+    }
+    if (
+      gameDecision.action == PLAYERGAMESTATUS.HIT ||
+      gameDecision.action == PLAYERGAMESTATUS.DOUBLE
+    ) {
+      turnPlayer.gameStatus = gameDecision.action;
+      turnPlayer.hand.push(this.deck.drawOne());
+      if (gameDecision.action === PLAYERGAMESTATUS.DOUBLE) {
+        turnPlayer.betAmount *= 2;
+      }
+      if (turnPlayer.isBlackJack())
+        turnPlayer.gameStatus = PLAYERGAMESTATUS.BLACKJACK;
+
+      if (turnPlayer.isGameOver())
+        turnPlayer.gameStatus = PLAYERGAMESTATUS.GAMEOVER;
+
+      if (turnPlayer.playerType === PLAYERTYPE.HOUSE)
+        turnPlayer.gameStatus = PLAYERGAMESTATUS.STAND;
+    }
+
+    if (gameDecision.action === PLAYERGAMESTATUS.SURRENDER)
+      turnPlayer.gameStatus = PLAYERGAMESTATUS.SURRENDER;
+    if (gameDecision.action === PLAYERGAMESTATUS.STAND)
+      turnPlayer.gameStatus = PLAYERGAMESTATUS.STAND;
+
+    if (gameDecision.action === PLAYERGAMESTATUS.WAIT)
+      turnPlayer.gameStatus = PLAYERGAMESTATUS.WAIT;
   }
 
   blackjackEvaluateAndGetRoundResults() {
-    let log = "";
-    for (let player of this.players.length) {
-      log += player.name;
-      log += player.gameStatus;
-    }
-    // this.resultsLog.push(log);
-    return log;
-  }
+    for (let player of this.players) {
+      if (player.isBlackJack()) {
+        player.chips += player.bet * 1.5;
+        player.result = PLAYERGAMESTATUS.WIN;
+        this.resultLog.push(
+          `${player.name} is win +${player.bet} chips. Total chips: ${player.chips}.`
+        );
+      }
+      if (player.playerType === PLAYERTYPE.HOUSE) {
+        if (player.isGameOver()) player.gameStatus = PLAYERTYPE.GAMEOVER;
+        if (player.isBlackJack()) player.gameStatus = PLAYERTYPE.BLACKJACK;
+      }
 
-  blackjackAssignPlayerHands() {
-    for (let player of this.players.length) {
-      if (player.type == PLAYERTYPE.HOUSE) {
-        player.hand.push(this.deck.drawOne());
-      } else {
-        player.hand.push(this.deck.drawOne());
-        player.hand.push(this.deck.drawOne());
+      if (player.gameStatus === PLAYERGAMESTATUS.SURRENDER) {
+        player.chips -= player.bet;
+        player.result = PLAYERGAMESTATUS.GAMEOVER;
+        this.resultLog.push(
+          `${player.name} is surrender. Total chips: ${player.chips}.`
+        );
+      }
+      if (this.house.gameStatus === PLAYERGAMESTATUS.BLACKJACK) {
+        if (player.gameStatus === PLAYERGAMESTATUS.BLACKJACK) {
+          player.result = PLAYERGAMESTATUS.PUSH;
+          this.resultLog.push(`${player.name} is push. ${player.chips}.`);
+        }
+        player.chips -= player.bet;
+        player.result = PLAYERGAMESTATUS.GAMEOVER;
+        this.resultLog.push(
+          `${player.name} is lose -${player.bet} chips. Total chips: ${player.chips}.`
+        );
+      }
+
+      if (this.house.gameStatus === PLAYERGAMESTATUS.GAMEOVER) {
+        if (player.gameStatus !== PLAYERGAMESTATUS.GAMEOVER) {
+          player.chips += player.bet;
+          player.result = PLAYERGAMESTATUS.WIN;
+          this.resultLog.push(
+            `${player.name} is win +${player.bet} chips. Total chips: ${player.chips}.`
+          );
+        }
+
+        player.result = PLAYERGAMESTATUS.PUSH;
+        this.resultLog.push(
+          `${player.name} is push. Total chips: ${player.chips}.`
+        );
+      }
+
+      if (this.house.getHandScore() === player.getHandScore()) {
+        player.result = PLAYERGAMESTATUS.PUSH;
+        this.resultLog.push(
+          `${player.name} is push. Total chips: ${player.chips}.`
+        );
+      }
+      if (
+        this.house.getHandScore() > player.getHandScore() ||
+        player.gameStatus === PLAYERGAMESTATUS.GAMEOVER
+      ) {
+        player.chips -= player.betAmount;
+        player.result = PLAYERGAMESTATUS.GAMEOVER;
+        this.resultLog.push(
+          `${player.name} is lose -${player.betAmount} chips. Total chips: ${player.chips}.`
+        );
       }
     }
   }
 
-  /*
-       return null : テーブル内のすべてのプレイヤーの状態を更新し、手札を空の配列に、ベットを0に設定します。
-    */
-  blackjackinitForNewGame() {
-    this.gameType = gameType;
+  blackjackAssignPlayerHands() {
+    for (let player of this.players) {
+      if (player.playerType === PLAYERTYPE.HOUSE) {
+        this.house.gameStatus === PLAYERGAMESTATUS.WAIT;
+      }
+      player.hand.push(this.deck.drawOne());
+      player.hand.push(this.deck.drawOne());
+    }
+  }
+
+  clearPlayerHandsAndBet() {
     this.deck = new Deck(this.gameType);
     this.gamePhase = GAMEPHASE.BETTING;
     this.resultsLog = [];
     this.turnCounter = 0;
     for (let player of this.players.length) player.initForNewGame();
   }
+
   getTurnPlayer() {
-    let playerIndex = this.turnCounter % (this.players.length + 1);
-    return (turnPlayer = this.players[playerIndex - 1]);
+    return this.players[this.turnCounter % this.players.length];
   }
 
   haveTurn() {
-    let turnPlayer = this.getTurnPlayer();
-    if (this.gamePhase == GAMEPHASE.BETTING) {
-      if (turnPlayer.type == PLAYERTYPE.HOUSE) {
-      } else if (
-        turnPlayer.type == PLAYERTYPE.USER ||
-        turnPlayer.type == PLAYERTYPE.AI
-      ) {
-        this.evaluateMove(turnPlayer);
-      }
-      if (this.onLastPlayer()) this.gamePhase = GAMEPHASE.ACTING;
-
-      if (this.gamePhase == GAMEPHASE.ACTING) {
-        if (this.allActionsCompleted()) this.gamePhase = ROUNDOVER;
-        else this.evaluateMove(turnPlayer);
-      }
-      if (this.gamePhase == GAMEPHASE.ROUNDOVER) {
-        this.gamePhase = "betting";
-        this.blackjackinitForNewGame();
-      }
-      this.turnCounter++;
+    if (this.players[1].chips === 0) {
+      this.gamePhase = GAMEPHASE.GAMEOVER;
+      return;
     }
+
+    if (this.allPlayerActionsResolved()) {
+      this.gamePhase = GAMEPHASE.ROUNDOVER;
+      this.blackjackEvaluateAndGetRoundResults();
+      return;
+    }
+
+    let turnPlayer = this.getTurnPlayer();
+    if (
+      turnPlayer.gameStatus != PLAYERGAMESTATUS.BLACKJACK &&
+      turnPlayer.gameStatus != PLAYERGAMESTATUS.GAMEOVER
+    )
+      this.evaluateMove(turnPlayer.promptPlayer(turnPlayer.gameStatus));
+
+    if (this.onLastPlayer() && this.gamePhase === GAMEPHASE.BETTING) {
+      this.gamePhase = GAMEPHASE.ACTING;
+      this.blackjackAssignPlayerHands();
+    }
+    this.turnCounter++;
   }
 
   onLastPlayer() {
-    let playerIndex = this.turnCounter % (this.players.length + 1);
-    return playerIndex == this.players.length - 1 ? true : false;
+    return this.turnCounter % this.players.length == this.players.length - 1;
   }
 
   allPlayerActionsResolved() {
     const resolvedStatusList = [
-      GAMESTATUS.STAND,
-      GAMESTATUS.GAMEOVER,
-      GAMESTATUS.SURRENDER,
+      PLAYERGAMESTATUS.STAND,
+      PLAYERGAMESTATUS.GAMEOVER,
+      PLAYERGAMESTATUS.SURRENDER,
+      PLAYERGAMESTATUS.BLACKJACK,
+      PLAYERGAMESTATUS.PUSH,
     ];
     for (let player of this.players)
       if (resolvedStatusList.includes(player)) return true;
     return false;
+  }
+
+  getUser() {
+    return this.players.filter((player) => player.type == PLAYERTYPE.USER)[0];
   }
 }

@@ -1,9 +1,11 @@
 import {
   PLAYERGAMESTATUS,
+  GAMEPHASE,
   PLAYERTYPE,
   PLAYERACTION,
   BlackJackFireNum,
 } from "../config.js";
+import { GameDecision } from "./gameDecision.js";
 
 export class Player {
   //platyler.type means player is user or ai or house
@@ -14,15 +16,14 @@ export class Player {
     this.hand = [];
     this.chips = chips;
     this.bet = 0;
-    this.winAmount = 0;
-    this.gameStatus = PLAYERGAMESTATUS.BETTING;
+    this.gameStatus = PLAYERGAMESTATUS.BET;
+    this.result;
   }
 
   initForNewGame() {
     this.hand = [];
     this.bet = 0;
-    this.winAmount = 0;
-    this.gameStatus = PLAYERGAMESTATUS.BETTING;
+    this.gameStatus = PLAYERGAMESTATUS.BET;
   }
   updateChips() {
     if (this.gameStatus == PLAYERGAMESTATUS.WIN) this.chips += this.bet;
@@ -36,45 +37,38 @@ export class Player {
     this.bet = bet;
   }
 
-  promptPlayer(playerType) {
-    if (playerType == PLAYERTYPE.USER) {
-      if (this.gameStatus == PLAYERGAMESTATUS.BETTING) {
-        return new GameDecision(PLAYERACTION.BET, this.bet);
-      }
-      if (this.gameStatus == PLAYERGAMESTATUS.DOUBLEBETTING) {
-        return new GameDecision(PLAYERACTION.DOUBLEBET, this.bet);
-      }
-      return new GameDecision(this.gameStatus, this.bet);
+  promptPlayer(playerActionType) {
+    if (this.gameStatus === PLAYERGAMESTATUS.BET) {
+      if (this.playerType === PLAYERTYPE.HOUSE)
+        return new GameDecision(PLAYERGAMESTATUS.WAIT);
+      if (this.playerType === PLAYERTYPE.AI)
+        return new GameDecision(
+          PLAYERGAMESTATUS.BET,
+          Math.floor(this.chips / 5)
+        );
+      return new GameDecision(PLAYERGAMESTATUS.BET, this.bet);
     }
 
-    if (playerType == PLAYERTYPE.AI) {
-      this.gameStatus = dicideAiStatus();
-      if (this.gameStatus == PLAYERGAMESTATUS.BETTING) {
-        if (this.chips == 0) return new GameDecision(PLAYERACTION.BET, 0);
-        const betChips = Math.floor(this.chips / 5);
-        this.bet = betChips;
-        return new GameDecision(PLAYERACTION.BET, this.bet);
-      }
-      if (this.gameStatus == PLAYERGAMESTATUS.ACTING)
-        return new GameDecision(PLAYERACTION.STAND, 0);
-
-      if (this.gameStatus == PLAYERGAMESTATUS.HITTING)
-        return new GameDecision(PLAYERACTION.HIT, 0);
-
-      return null;
+    if (this.playerType != PLAYERTYPE.USER) {
+      if (this.getHandScore() <= 17)
+        return new GameDecision(PLAYERGAMESTATUS.HIT, this.bet);
+      return new GameDecision(PLAYERGAMESTATUS.STAND, this.bet);
     }
+    return new GameDecision(playerActionType, this.bet);
+  }
+  blackjackGetUserActionGameDecision(table, userData) {
+    if (table.playerHandIsBlackjack(this))
+      return new GameDecision("blackjack", this.bet);
 
-    if (playerType == PLAYERTYPE.HOUSE) {
-      if (this.gameStatus == PLAYERGAMESTATUS.BETTING) {
-        this.gameStatus = PLAYERGAMESTATUS.WAITING;
-        return new GameDecision(PLAYERACTION.WAIT, 0);
-      }
-
-      if (this.gameStatus == PLAYERGAMESTATUS.HITTING) {
-        return new GameDecision(PLAYERACTION.HIT, this.bet);
-      }
-      return null;
+    let gameDecision = {};
+    if (this.gameStatus == "bet" || this.gameStatus == "hit") {
+      let choiceKey = ["surrenderFirstTime", "stand", "hit", "doubleFirstTime"];
+      gameDecision = new GameDecision(choiceKey[userData], this.bet);
     }
+    //if no action is needed. for example when 'broke'
+    else gameDecision = new GameDecision(this.gameStatus, this.bet);
+
+    return gameDecision;
   }
 
   getHandScore() {
@@ -97,25 +91,8 @@ export class Player {
     if (this.getHandScore() > BlackJackFireNum) return true;
     return false;
   }
-
-  hit() {
-    this.drawOne();
-    if (this.isGameOver()) this.setGameStatus(PLAYERGAMESTATUS.GAMEOVER);
+  isBlackJack() {
+    if (this.getHandScore() == BlackJackFireNum) return true;
+    return false;
   }
-  doubleBet() {
-    this.bet *= 2;
-  }
-  reduceChipsAfterGameOver() {
-    this.chips -= this.bet;
-  }
-}
-
-function dicideAiStatus() {
-  const maxIndex = PLAYERGAMESTATUS.length - 1;
-  const index = Math.floor(Math.random() * maxIndex);
-
-  //return status exept for WAITING
-  return PLAYERGAMESTATUS[index] == PLAYERGAMESTATUS.WAITING
-    ? PLAYERGAMESTATUS[index - 1]
-    : PLAYERGAMESTATUS[index];
 }
