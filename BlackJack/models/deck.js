@@ -1,5 +1,5 @@
 import { Card } from "./card.js";
-import { SUIT, GAMETYPE, RANK } from "../config.js";
+import { SUIT, GAMETYPE, RANK, CardImgDirname } from "../config.js";
 
 export class Deck {
   constructor(gameType) {
@@ -8,7 +8,7 @@ export class Deck {
     this.resetDeck();
   }
 
-  shuffle() {
+  shuffleDeck() {
     for (let i = this.cards.length - 1; i >= 0; i--) {
       let j = Math.floor(Math.random() * (this.cards.length - 1));
       let tempCard = this.cards[i];
@@ -22,7 +22,8 @@ export class Deck {
     if (this.gameType == GAMETYPE.BLACKJACK) {
       for (let suit of SUIT) {
         for (let rank of RANK) {
-          this.cards.push(new Card(suit, rank));
+          const imgUrl = CardImgDirname + rank + "-" + suit + ".png";
+          this.cards.push(new Card(suit, rank, imgUrl));
         }
       }
     }

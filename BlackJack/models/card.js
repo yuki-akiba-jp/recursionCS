@@ -1,8 +1,9 @@
 import { PictureCardsRanks } from "../config.js";
 export class Card {
-  constructor(suit, rank) {
+  constructor(suit, rank, imgUrl) {
     this.suit = suit;
     this.rank = rank;
+    this.imgUrl = imgUrl;
   }
 
   getRankNumber() {
