@@ -1,11 +1,10 @@
-import { Card } from "./card.js";
-import { SUIT, GAMETYPE, RANK, CardImgDirname } from "../config.js";
+import { Card } from "./card.mjs";
+import { SUIT, GAMETYPE, RANK, CardImgDirname } from "../config.mjs";
 
 export class Deck {
   constructor(gameType) {
     this.gameType = gameType;
     this.cards = [];
-    this.resetDeck();
   }
 
   shuffleDeck() {

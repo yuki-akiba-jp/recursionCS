@@ -1,4 +1,4 @@
-import { PLAYERGAMESTATUS, BlackJackFireNum } from "../config.js";
+import { BLACKJACKNUM, PLAYERACTION } from "../config.mjs";
 
 export class Player {
   //platyler.type means player is user or ai or house
@@ -16,11 +16,15 @@ export class Player {
   initForNewGame() {
     this.hand = [];
     this.bet = 0;
+    this.action = null;
+    this.result = null;
   }
-  updateChips() {
-    if (this.gameStatus == PLAYERGAMESTATUS.WIN) this.chips += this.bet;
-    if (this.gameStatus == PLAYERGAMESTATUS.GAMEOVER) this.chips -= this.bet;
+
+  initForNewTable() {
+    this.initForNewGame();
+    this.chips = 400;
   }
+  updateChips() {}
 
   getHandScore() {
     let handScore = 0;
@@ -29,8 +33,8 @@ export class Player {
       handScore += card.getRankNumber();
       if (card.isAce()) aceCount += 1;
     }
-    if (handScore > BlackJackFireNum) {
-      while (handScore <= BlackJackFireNum || !aceCount) {
+    if (handScore > BLACKJACKNUM) {
+      while (aceCount > 0 && handScore <= BLACKJACKNUM) {
         handScore -= 10;
         aceCount--;
       }
@@ -39,12 +43,19 @@ export class Player {
   }
 
   isGameOver() {
-    if (this.getHandScore() > BlackJackFireNum) return true;
+    if (this.getHandScore() > BLACKJACKNUM) return true;
     return false;
   }
 
   isBlackJack() {
-    if (this.getHandScore() == BlackJackFireNum) return true;
+    if (this.getHandScore() == BLACKJACKNUM) return true;
     return false;
+  }
+
+  canBet(betDenomination) {
+    const betDenominationNum = parseInt(betDenomination);
+
+    if (this.chips >= this.bet + betDenominationNum) return true;
+    else return false;
   }
 }

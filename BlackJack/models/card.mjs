@@ -1,4 +1,4 @@
-import { PictureCardsRanks } from "../config.js";
+import { PictureCardsRanks } from "../config.mjs";
 export class Card {
   constructor(suit, rank, imgUrl) {
     this.suit = suit;
