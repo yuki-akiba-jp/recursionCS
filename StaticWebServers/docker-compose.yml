@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  ubuntu-container:
+    image: ubuntu:latest
+    command: /bin/bash
+    tty: true
