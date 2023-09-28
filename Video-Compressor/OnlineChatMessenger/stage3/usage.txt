@@ -1,0 +1,25 @@
+Online Chat Messenger
+
+Stage 1: Basic Implementation
+-----------------------------
+
+Running the Application:
+1. Start the Server: Run the server script to initiate the server.
+2. Start the Clients: Run the client script multiple times to simulate multiple client connections.
+
+In this basic implementation for Stage 1:
+- The server continuously listens for incoming messages.
+- Upon receiving a message, the server relays it to all connected clients.
+- The client can send messages to the server and also listens for incoming messages from other clients.
+
+Future Stages
+-------------
+
+Stage 2 & Stage 3:
+
+In the upcoming stages, the application will be enhanced with additional features:
+- Chat Rooms: Clients will be able to create and join chat rooms.
+- GUI Clients: A graphical user interface will be introduced for the client application.
+- Multi-process Chat Rooms: The application will support multi-process chat rooms for improved performance and scalability.
+
+Given the complexity and the extensive features planned for these stages, a detailed breakdown and a phased development approach will be adopted.

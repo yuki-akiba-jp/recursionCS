@@ -1,0 +1,21 @@
+Online Chat Messenger - Stage 2 Implementation
+
+Description:
+------------
+In this stage, we have added the functionality for chat rooms. Clients can create their own chat rooms and other clients can join these rooms.
+
+Features:
+---------
+1. Clients can create a chat room using the /create <room_name> command.
+2. Clients can join an existing chat room using the /join <room_name> command.
+3. Messages sent by a client will only be relayed to other clients in the same chat room.
+
+Instructions to Run:
+--------------------
+1. Start the server by running the server script.
+2. Start multiple clients by running the client script multiple times.
+3. Use the /create and /join commands in the client to create and join chat rooms, respectively.
+
+Note:
+-----
+This completes the implementation for Stage 2.
